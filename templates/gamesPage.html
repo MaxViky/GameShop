@@ -1,0 +1,68 @@
+{% extends 'templates/default.html' %}
+{% block title %}Магазин{% endblock %}
+
+{% block content %}
+<style>
+.article-img {
+    height: 230px;
+    width: 161px;
+    border-radius: 2px;
+}
+.article-game {
+    display: inline-block;
+    margin-right: 22px;
+    min-height: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    vertical-align: top;
+    width: 163px;
+}
+.article-game-image {
+    height: 230px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    position: relative;
+    width: 163px;
+}
+.article-game-title {
+    padding-bottom: 2px;
+}
+.short-item {
+    width: 165px;
+    height: 282px;
+    margin-right: 2.5%;
+    float: left;
+    height: 295px;
+}
+
+</style>
+<div class="container darkBlue" style="padding: 25px">
+    <div class="row">
+        {% for game in game_list %}
+        <div class="short-item">
+            <div class="article-film">
+                <div class="article-game-image">
+                    <a href="{{ game.url }}">
+                        <img class="article-img" src="{{ game.poster.url }}" alt="">
+                    </a>
+                </div>
+                <center>
+                    <div class="article-game-title">
+                        <a> <font color="White">{{ game.name }}</font></a>
+                    </div>
+                    {% if game.price > 0 %}
+                    <div>
+                        <a> <font color="White">{{ game.price }} руб.</font></a>
+                    </div>
+                    {% else %}
+                    <div>
+                        <a> <font color="White">Бесплатно</font></a>
+                    </div>
+                    {% endif %}
+                </center>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

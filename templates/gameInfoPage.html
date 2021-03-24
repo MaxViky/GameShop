@@ -1,0 +1,36 @@
+{% extends 'templates/default.html' %}
+{% block title %} {{ game.name }} {% endblock %}
+
+{% block content %}
+<style>
+.article-img {
+    width: 200px;
+    border-radius: 2px;
+}
+</style>
+<div class="container " style="padding: 25px 0 25px 0">
+    <div style="float: left; width: 100px; height:460">
+        <div style="position: relative;">
+            <img class="article-img" src="{{ game.poster.url }}" alt="">
+        </div>
+    </div>
+    <div style="padding-left: 337px;">
+        <font color="White" size="24">{{ game.name }} </font>
+        <br>
+        <font color="White"> Дата выхода: {{ game.release }} </font>
+        <br>
+        <font color="White"> Цена: {{ game.price }} руб. </font>
+        <br>
+        <font color="White"> Издатель: </font> <a href="#"> {{ game.publisher }} </a>
+        <br>
+        <font color="White"> Разработчик: </font> <a href="#"> {{ game.developer }} </a>
+        <br>
+    </div>
+    <div class="info">
+        <font color="White" size="6"> Описание </font>
+        <br>
+        <font color="White"> {{ game.description }} </font>
+    </div>
+</div>
+
+{% endblock %}
