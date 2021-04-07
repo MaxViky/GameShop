@@ -33,7 +33,9 @@ div#global_header .content {
 	margin: 0px auto;
 	z-index: 402;
 }
-
+.footer-bg {
+ background: #12283e; /* Цвет фона */
+}
     </style>
 </head>
 <body>
@@ -65,8 +67,14 @@ div#global_header .content {
     </div>
 </header>
 <div class="darkBlue">
+
     {% block content %}
     {% endblock %}
 </div>
+<footer class="footer-bg" style="height: 150px;">
+<div class="container">
+    <font color="White">Все права защищены.</font>
+  </div>
+</footer>
 </body>
 </html>

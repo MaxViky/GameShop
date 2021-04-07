@@ -5,6 +5,7 @@ from django.db import models
 class Publisher(models.Model):
     name = models.CharField("Название", max_length=50)
     poster = models.ImageField('Постер', null=True, upload_to='PublisherPoster/')
+    url = models.SlugField(max_length=150, unique=True)
 
     def __str__(self):
         return self.name
@@ -17,6 +18,7 @@ class Publisher(models.Model):
 class Developer(models.Model):
     name = models.CharField("Название", max_length=50)
     poster = models.ImageField('Постер', null=True, upload_to='DeveloperPoster/')
+    url = models.SlugField(max_length=150, unique=True)
 
     def __str__(self):
         return self.name
@@ -36,6 +38,11 @@ class Game(models.Model):
     release = models.DateField("Дата релиза")
     poster = models.ImageField('Постер', null=True, upload_to='gamePoster/')
     count_download = models.IntegerField("Количество скачиваний")
+    demandsOS = models.CharField('ОС', max_length=150)
+    demandsCPU = models.CharField('Процессор', max_length=150)
+    demandsRAM = models.CharField('Оперативная память', max_length=150)
+    demandsGPU = models.CharField('Видеокарта', max_length=150)
+    demandsROM = models.CharField('Место на диске', max_length=150)
     url = models.SlugField(max_length=150, unique=True)
 
     def __str__(self):

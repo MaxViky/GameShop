@@ -38,7 +38,7 @@
 </style>
 <div class="container darkBlue" style="padding: 25px">
     <div class="row">
-        {% for game in game_list %}
+        {% for game in posts %}
         <div class="short-item">
             <div class="article-film">
                 <div class="article-game-image">
@@ -64,5 +64,6 @@
         </div>
         {% endfor %}
     </div>
+    {% include "templates/pagination.html" with page=posts %}
 </div>
 {% endblock %}
