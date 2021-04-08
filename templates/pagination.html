@@ -14,32 +14,48 @@ ul.pagination li a {
     text-decoration: none;
 
 }
-.foregWhite{
-color: ;
+.active{
+background-color: #12283e;
 }
+
 </style>
 {% load i18n %}
- <ul class="pagination">
-     {% if  posts.has_previous %}
-        <li>
-            <a class="Next" href="?page={{ page.previous_page_number }}{% if request.GET.q %}&q=
+<ul class="pagination">
+    {% if posts.has_previous %}
+    <li>
+        <a class="Next" href="?page={{ page.previous_page_number }}{% if request.GET.q %}&q=
                       {{request.GET.q }}{% endif %}">{% trans 'Предыдущая' %}
-            </a>
-          </li>
-       {% endif %}
-       {% for n in posts.paginator.page_range %}
-            {% if n > posts.number|add:-2 and n < posts.number|add:2 %}
-                  <li class='{% if n == posts.number %}active{% else %}no-active{% endif %}'>
-                        <a class="active" href='?page={{ n }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}'>{{ n }}</a>
-                   </li>
-              {% endif %}
-        {% endfor %}
-
-        {% if posts.has_next %}
-            <li>
-                 <a class="Next" href="?page=
-                               {{ posts.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">
-                                     {% trans 'Следующая' %}</a>
-            </li>
-         {% endif %}
+        </a>
+    </li>
+    {% else %}
+        <li>
+        <a class="Next" href="">{% trans 'Предыдущая' %}
+        </a>
+    </li>
+    {% endif %}
+    {% for n in posts.paginator.page_range %}
+    {% if n > posts.number|add:-2 and n < posts.number|add:2 %}
+    {% if n == posts.number %}
+    <li>
+        <a class="active" href='?page={{ n }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}'>{{ n }}</a>
+    </li>
+    {% else %}
+    <li >
+        <a href='?page={{ n }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}'>{{ n }}</a>
+    </li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% if posts.has_next %}
+    <li>
+        <a class="Next" href="?page={{ posts.next_page_number }}{% if request.GET.q %}&q=
+        {{ request.GET.q }}{% endif %}">
+            {% trans 'Следующая' %}</a>
+    </li>
+    {% else %}
+        <li>
+        <a class="Next" href="">{% trans 'Следующая' %}
+        </a>
+    </li>
+    {% endif %}
 </ul>
