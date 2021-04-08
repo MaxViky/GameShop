@@ -57,9 +57,9 @@ div#global_header .content {
                 </div>
                 <div>
                     {% if request.user.is_authenticated %}
-                    <a class="nav-link" href="/signIn"> <font color="White">{{ user }}(Выйти)</font> </a>
+                    <a class="nav-link" href="/logout"> <font color="White">{{ user }}(Выйти)</font> </a>
                     {% else %}
-                    <a class="nav-link" href="/signIn"> <font color="White">ВОЙТИ</font> </a>
+                    <a class="nav-link" href="/login"> <font color="White">ВОЙТИ</font> </a>
                     {% endif %}
                 </div>
             </nav>

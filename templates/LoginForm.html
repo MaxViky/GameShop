@@ -1,0 +1,22 @@
+{% extends 'templates/default.html' %}
+{% block title %} Авторизация {% endblock %}
+{% block content %}
+<div class="container" style="font-family=Verdana;">
+    <div class="container" style="padding-top:30px;">
+    <H2 class="text-center"><font color="White">Авторизация</font></H2>
+    <div class="container" style="padding:10px;" align="center">
+    <form action="" method="POST" style="color:White">
+        {% csrf_token %}
+    <table class="">
+        {{ log_form.as_table }}
+    </table>
+    <font style="padding-left: 60px; color:red;"> {{ invalid }}</font>
+        <div style="padding: 20px; padding-left: 100px;">
+        <input style="background: #12283e; color: White;" type="submit" class="btn" value="Войти" name="LogIn"/>
+        <a style="background: #12283e; color: White;" href="/authorization/join" type="submit" class="btn" name="Reg">Регистрация</a>
+    </div>
+    </form>
+    </div>
+        </div>
+</div>
+{% endblock %}

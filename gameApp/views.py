@@ -8,7 +8,7 @@ from gameApp.models import*
 class GameView(View):
     def get(self, request):
         games = Game.objects.all()
-        paginator = Paginator(games, 1)
+        paginator = Paginator(games, 2)
         page = request.GET.get('page')
         try:
             posts = paginator.page(page)
@@ -17,7 +17,7 @@ class GameView(View):
         except EmptyPage:
             posts = paginator.page(paginator.num_pages)
         return render(request, 'templates/gamesPage.html',
-                      {'page': page, 'posts': posts})
+                      {'posts': posts})
 
 
 class DetailGameView(View):
