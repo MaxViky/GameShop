@@ -37,8 +37,9 @@
 
 </style>
 <div class="container darkBlue" style="padding: 25px">
+    {% if game_list %}
     <div class="row">
-        {% for game in posts %}
+        {% for game in game_list %}
         <div class="short-item">
             <div class="article-film">
                 <div class="article-game-image">
@@ -65,7 +66,10 @@
         {% endfor %}
     </div>
     <div class="container" align="center">
-    {% include "templates/pagination.html" with page=posts %}
+    {% include "templates/pagination.html" with page=game_list %}
     </div>
+     {% else %}
+        <p style="color: White;">Извините, но ничего не найдено :(</p>
+    {% endif %}
 </div>
 {% endblock %}

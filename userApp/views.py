@@ -6,7 +6,7 @@ from userApp.forms import *
 
 
 def LogIn(request):
-    invalid = 'Invalid login or password'
+    invalid = 'Неверный логин или пароль'
     if request.method == 'POST':
         form = loginForm(request.POST)
         if 'LogIn' in request.POST:

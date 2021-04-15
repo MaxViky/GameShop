@@ -18,44 +18,34 @@ ul.pagination li a {
 background-color: #12283e;
 }
 
+
 </style>
 {% load i18n %}
 <ul class="pagination">
-    {% if posts.has_previous %}
+    {% if game_list.has_previous %}
     <li>
-        <a class="Next" href="?page={{ page.previous_page_number }}{% if request.GET.q %}&q=
-                      {{request.GET.q }}{% endif %}">{% trans 'Предыдущая' %}
-        </a>
-    </li>
-    {% else %}
-        <li>
-        <a class="Next" href="">{% trans 'Предыдущая' %}
+        <a class="Next" href="?page={{ game_list.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q }}{% endif %}">{% trans 'Предыдущая' %}
         </a>
     </li>
     {% endif %}
-    {% for n in posts.paginator.page_range %}
-    {% if n > posts.number|add:-2 and n < posts.number|add:2 %}
-    {% if n == posts.number %}
+        {% for n in game_list.paginator.page_range %}
+            {% if n > game_list.number|add:-2 and n < game_list.number|add:2 %}
+                {% if n == game_list.number %}
+                    <li>
+                        <a class="active" href='?page={{ n }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}'>
+                            {{ n }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href='?page={{ n }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}'>{{ n }}</a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% if game_list.has_next %}
     <li>
-        <a class="active" href='?page={{ n }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}'>{{ n }}</a>
-    </li>
-    {% else %}
-    <li >
-        <a href='?page={{ n }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}'>{{ n }}</a>
-    </li>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-    {% if posts.has_next %}
-    <li>
-        <a class="Next" href="?page={{ posts.next_page_number }}{% if request.GET.q %}&q=
-        {{ request.GET.q }}{% endif %}">
+        <a class="Next" href="?page={{ game_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">
             {% trans 'Следующая' %}</a>
-    </li>
-    {% else %}
-        <li>
-        <a class="Next" href="">{% trans 'Следующая' %}
-        </a>
     </li>
     {% endif %}
 </ul>
