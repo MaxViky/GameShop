@@ -31,11 +31,20 @@
         <font color="White"><h4>{{ game.name }}</h4> </font>
         <font color="White"> Дата выхода: {{ game.release }} </font>
         <br>
-        <font color="White"> Цена: {{ game.price }} руб. </font>
+        {% if game.price > 0 %}
+        <font color="White">Цена: {{ game.price }} руб.</font>
+        {% else %}
+        <font color="White">Цена: Бесплатно</font>
+        {% endif %}
         <br>
         <font color="White"> Издатель: </font> <a href="#"> {{ game.publisher }} </a>
         <br>
         <font color="White"> Разработчик: </font> <a href="#"> {{ game.developer }} </a>
+        <br>
+        <font color="White"> Жанры: </font>
+        {% for tag in tags %}
+        <a href = "#"> {{ tag.label.name }}</a>
+        {% endfor %}
         <br>
         <font color="White"><h4> Системные требования:</h4> </font>
         <ul class="container">

@@ -43,7 +43,7 @@
         <div class="short-item">
             <div class="article-film">
                 <div class="article-game-image">
-                    <a href="{{ game.url }}">
+                    <a href="/games/{{ game.url }}">
                         <img class="article-img" src="{{ game.poster.url }}" alt="">
                     </a>
                 </div>
@@ -65,11 +65,11 @@
         </div>
         {% endfor %}
     </div>
-    <div class="container" align="center">
+</div>
+<div class="container" style="padding: 20px;" align="center">
     {% include "templates/pagination.html" with page=game_list %}
     </div>
      {% else %}
         <p style="color: White;">Извините, но ничего не найдено :(</p>
     {% endif %}
-</div>
 {% endblock %}

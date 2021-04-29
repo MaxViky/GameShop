@@ -6,6 +6,6 @@ from . import views
 urlpatterns = [
     url('^join/$', views.register),
     url('^login/$', views.LogIn),
-    path('logout/', views.LogoutView.as_view(), name='logout'),
+    url('^logout/', views.LogOut, name='logout'),
 
 ]
