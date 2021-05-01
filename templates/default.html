@@ -53,21 +53,24 @@ div#global_header .content {
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/friends"> <font color="White">ДРУЗЬЯ</font></a>
                         </li>
-                    </ul>
-                </div>
-                <div>
+
                     {% if request.user.is_authenticated %}
-                    <a TYPE=submit VALUE=" Метод Confirm " LANGUAGE="Javascript" onclick="confirm('Здесь Ваш вопрос')" class="nav-link" href="/logout"> <font color="White">{{ user }}(Выйти)</font> </a>
+                        <li style="padding-right: 10px;" class="nav-item"> <a type="submit"
+                                                                              onclick="return confirm('Вы действительно хотите выйти?')"
+                                                 class="nav-link" href="/logout"> <font color="White">{{ user }}(Выйти)</font></a> </li>
                     {% else %}
-                    <a class="nav-link" href="/login"> <font color="White">ВОЙТИ</font> </a>
+                        <li class="nav-item"> <a class="nav-link" href="/login"> <font color="White">ВОЙТИ</font> </a> </li>
                     {% endif %}
+                        </ul>
                 </div>
             </nav>
         </div>
     </div>
 </header>
-<div class="darkBlue">
+<div class="darkBlue search">
     {% include "templates/search.html" %}
+</div>
+<div class="darkBlue">
     {% block content %}
     {% endblock %}
 </div>
