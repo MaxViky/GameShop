@@ -11,7 +11,7 @@ from gameApp.models import*
 class GameView(View):
     def get(self, request):
         games = Game.objects.all()
-        paginator = Paginator(games, 4)
+        paginator = Paginator(games, 2)
         page = request.GET.get('page')
         try:
             posts = paginator.page(page)
@@ -35,12 +35,11 @@ class DetailGameView(View):
 class SearchView(View):
     def get(self, request, *args, **kwargs):
         games = {}
+        question = request.GET.get('name')
 
-        question = request.GET.get('q')
         if question is not None:
             search_game = Game.objects.filter(Q(name__icontains=question))
-            games['last_question'] = '?q=%s' % question
-
+            games['last_question'] = '?name=%s' % question
             paginator = Paginator(search_game, 2)
             page = request.GET.get('page')
             try:

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f5da27c-5236-4543-b423-68896ce9ef78" name="Default Changelist" comment="add login">
-      <change afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GameShop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GameShop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1f5da27c-5236-4543-b423-68896ce9ef78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameShop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameShop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gameInfoPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gameInfoPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gamesPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gamesPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="sqlite" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -58,6 +58,34 @@
       <recent name="E:\Projects\Diploma\GameShop" />
       <recent name="E:\Projects\Diploma\GameShop\main" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GameShop" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gameApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gameApp/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
@@ -92,7 +120,28 @@
       <option name="project" value="LOCAL" />
       <updated>1617886464240</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add tags">
+      <created>1619706248616</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619706248616</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add tags">
+      <created>1619706862059</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619706862059</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add confirm for exit">
+      <created>1619861131910</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619861131910</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,16 +161,86 @@
     <MESSAGE value="add pagination, screen shoots, description and requirement" />
     <MESSAGE value="complete pagination.html" />
     <MESSAGE value="add login" />
-    <option name="LAST_COMMIT_MESSAGE" value="add login" />
+    <MESSAGE value="add tags" />
+    <MESSAGE value="add confirm for exit" />
+    <option name="LAST_COMMIT_MESSAGE" value="add confirm for exit" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="363" y="13" key="CommitChangelistDialog2" timestamp="1619861129138">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="363" y="13" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1619861129138" />
+    <state width="1419" height="276" key="GridCell.Tab.0.bottom" timestamp="1619943708073">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
+    <state width="1419" height="276" key="GridCell.Tab.0.center" timestamp="1619943708073">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
+    <state width="1419" height="276" key="GridCell.Tab.0.left" timestamp="1619943708073">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
+    <state width="1419" height="276" key="GridCell.Tab.0.right" timestamp="1619943708073">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
+    <state width="1419" height="276" key="GridCell.Tab.1.bottom" timestamp="1619943708074">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1619943708074" />
+    <state width="1419" height="276" key="GridCell.Tab.1.center" timestamp="1619943708074">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1619943708074" />
+    <state width="1419" height="276" key="GridCell.Tab.1.left" timestamp="1619943708074">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1619943708074" />
+    <state width="1419" height="276" key="GridCell.Tab.1.right" timestamp="1619943708074">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1619943708074" />
+    <state x="136" y="67" key="MergeDialog" timestamp="1619808816399">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="136" y="67" key="MergeDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808816399" />
+    <state x="432" y="145" key="MultipleFileMergeDialog" timestamp="1619808821845">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="432" y="145" key="MultipleFileMergeDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808821845" />
+    <state x="557" y="140" key="RollbackChangesDialog" timestamp="1619942469015">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="557" y="140" key="RollbackChangesDialog/0.0.1440.860@0.0.1440.860" timestamp="1619942469015" />
     <state x="221" y="72" key="SettingsEditor" timestamp="1618469984303">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1618469984303" />
-    <state x="415" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1619706197879">
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1619706880979">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="415" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1619706197879" />
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1619706880979" />
+    <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1619808949427">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808949427" />
+    <state x="415" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1620142993475">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="415" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1620142993475" />
+    <state x="529" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619813986134">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="529" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1619813986134" />
+    <state x="501" y="142" key="git4idea.branch.GitSmartOperationDialog" timestamp="1619808798356">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="501" y="142" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808798356" />
+    <state x="443" y="221" key="git4idea.merge.GitPullDialog" timestamp="1619813969108">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="443" y="221" key="git4idea.merge.GitPullDialog/0.0.1440.860@0.0.1440.860" timestamp="1619813969108" />
   </component>
 </project>

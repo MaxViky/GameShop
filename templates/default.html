@@ -33,6 +33,7 @@ div#global_header .content {
 	margin: 0px auto;
 	z-index: 402;
 }
+
 .footer-bg {
  background: #12283e; /* Цвет фона */
 }
@@ -70,9 +71,11 @@ div#global_header .content {
 <div class="darkBlue search">
     {% include "templates/search.html" %}
 </div>
-<div class="darkBlue">
+<div class="darkBlue white">
+    <div class="container">
     {% block content %}
     {% endblock %}
+        </div>
 </div>
 <footer class="footer-bg" style="height: 150px;">
 <div class="container">

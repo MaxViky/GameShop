@@ -23,7 +23,6 @@ urlpatterns = [
     path('', include('main.urls')),
     path('games/', include('gameApp.urls')),
     path('', include('userApp.urls')),
-    path('profile/', include('userApp.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
