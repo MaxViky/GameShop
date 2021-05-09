@@ -36,6 +36,9 @@ div#global_header .content {
 
 .footer-bg {
  background: #12283e; /* Цвет фона */
+ height: 150px;
+ width: 100%;
+ display: flex;
 }
     </style>
 </head>
@@ -48,9 +51,9 @@ div#global_header .content {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="/"> <font color="White">ГЛАВНАЯ</font></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/games"> <font color="White">МАГАЗИН</font></a>
+                        <li class="nav-item"><a class="nav-link" href="/games/?page=1"> <font color="White">МАГАЗИН</font></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="/profile"> <font color="White">ПРОФИЛЬ</font></a>
+                        <li class="nav-item"><a class="nav-link" href="/profile/{{ user }}"> <font color="White">ПРОФИЛЬ</font></a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/friends"> <font color="White">ДРУЗЬЯ</font></a>
                         </li>
@@ -68,18 +71,30 @@ div#global_header .content {
         </div>
     </div>
 </header>
-<div class="darkBlue search">
+
+<div class="darkBlue">
+    <div class="darkBlue search">
     {% include "templates/search.html" %}
 </div>
-<div class="darkBlue white">
-    <div class="container">
+    <div class="container white" >
     {% block content %}
     {% endblock %}
-        </div>
+    </div>
+
 </div>
-<footer class="footer-bg" style="height: 150px;">
-<div class="container">
-    <font color="White">Все права защищены.</font>
+<footer class="footer-bg">
+<div class="container white">
+    Все права защищены
+    <br>
+    <span>
+        Сайт разработан студентом группы 17ИС-1
+
+    </span>
+    <br>
+    <br>
+    <br>
+    Якунин Максим
+
   </div>
 </footer>
 </body>

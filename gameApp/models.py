@@ -4,7 +4,7 @@ from django.db import models
 
 class Publisher(models.Model):
     name = models.CharField("Название", max_length=50)
-    poster = models.ImageField('Постер', null=True, upload_to='PublisherPoster/')
+    poster = models.ImageField('Постер', null=True, blank=True, upload_to='PublisherPoster/')
     url = models.SlugField(max_length=150, unique=True)
 
     def __str__(self):
@@ -17,7 +17,7 @@ class Publisher(models.Model):
 
 class Developer(models.Model):
     name = models.CharField("Название", max_length=50)
-    poster = models.ImageField('Постер', null=True, upload_to='DeveloperPoster/')
+    poster = models.ImageField('Постер', null=True, blank=True, upload_to='DeveloperPoster/')
     url = models.SlugField(max_length=150, unique=True)
 
     def __str__(self):
@@ -83,7 +83,7 @@ class Tagged(models.Model):
     label = models.ForeignKey(GameLabel, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.label, self.game
+        return "{0} - {1}".format(self.label, self.game)
 
     class Meta:
         verbose_name = 'Метка к игре'
@@ -102,4 +102,16 @@ class Reviews(models.Model):
 
     class Meta:
         verbose_name = 'Отзыв'
-        verbose_name_plural = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
+
+
+class Cart(models.Model):
+    user = models.ForeignKey(User, verbose_name='Пользователь', max_length=50, on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, verbose_name='Игра', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{0} - {1}".format(self.user, self.game)
+
+    class Meta:
+        verbose_name = 'Корзина'
+        verbose_name_plural = 'Корзины'

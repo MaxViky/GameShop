@@ -29,7 +29,7 @@ background-color: #12283e;
         {% endif %}
     {% if game_list.has_previous %}
     <li>
-        <a class="previous" href="?page={{ game_list.previous_page_number }}{% if request.GET.name %}&q={{request.GET.name }}{% endif %}">{% trans 'Предыдущая' %}
+        <a class="previous" href="?page={{ game_list.previous_page_number }}{% if request.GET.name %}&name={{request.GET.name }}{% endif %}">{% trans 'Предыдущая' %}
         </a>
     </li>
     {% endif %}
@@ -37,18 +37,18 @@ background-color: #12283e;
             {% if n > game_list.number|add:-3 and n < game_list.number|add:3 %}
                 {% if n == game_list.number %}
                     <li>
-                        <a class="active" href='{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}?page={{ n }}'>{{ n }}</a>
+                        <a class="active" href='?page={{ n }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}'>{{ n }}</a>
                     </li>
                 {% else %}
                     <li>
-                        <a href='{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}?page={{ n }}'>{{ n }}</a>
+                        <a href='?page={{ n }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}'>{{ n }}</a>
                     </li>
                 {% endif %}
             {% endif %}
         {% endfor %}
     {% if game_list.has_next %}
     <li>
-        <a class="Next" href="{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}?page={{ game_list.next_page_number }}">
+        <a class="Next" href="?page={{ game_list.next_page_number }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}">
             {% trans 'Следующая' %}</a>
     </li>
     {% endif %}

@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'templates/default.html' %}
+{% block title %}{{ user }}{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<style>
+.profile-img {
+
+    max-width: 245px;
+    position: relative;
+    }
+.article-game-image {
+    height: 230px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    position: relative;
+    width: 163px;
+}
+.profile-view{
+display: flex;
+padding-left: 0px;
+padding-top: 15px;
+padding-bottom: 10px;
+}
+</style>
+<div class="container profile-view">
+    <div>
+        <img class="profile-img" src="{{ user.profile.photo.url }}" alt="">
+    </div>
+    <div style="padding-left: 15px;">
+        <h3>{{ user.username }}</h3>
+        <br>
+        Почта: {{ user.email }}
+        <br>
+        Дата рождения: {{ user.profile.date_of_birth }}
+        <br>
+    </div>
+</div>
+<div>
+
+</div>
+{% endblock %}

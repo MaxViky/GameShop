@@ -64,11 +64,19 @@
         <img class="shoots-img" src="{{ shoots.image.url }}" alt="">
         {% endfor %}
     </div>
+
     <div style="padding-left: 0px;">
-        <a href="#" style="margin-left: 80px; margin-top:2px;" type="submit" class="btn mediumBlue btn-md index"
-           name="buyBtn">Купить</a>
-        <a href="#" style="margin-left: 80px; margin-top:2px;" type="submit" class="btn mediumBlue btn-md index"
-           name="cartBtn">В корзину</a>
+        {% if cart > 0 %}
+         <form action="" method="GET">
+            {% csrf_token %}
+            <input type="submit" class="btn blackBlue btn-md index" value="В корзине" name="qwe">
+        </form>
+        {% else %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input id="add" type="submit" class="btn mediumBlue btn-md index" value="В корзину" name="add" >
+        </form>
+        {% endif %}
     </div>
 </div>
 </div>

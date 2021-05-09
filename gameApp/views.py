@@ -1,7 +1,8 @@
 import null as null
 from django.core.paginator import *
 from django.db.models import Q
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from django.views.generic.base import View
 
 from gameApp.forms import filterForm
@@ -9,7 +10,7 @@ from gameApp.models import*
 
 
 class GameView(View):
-    def get(self, request):
+    def GetGamesPage(request) -> render:
         games = Game.objects.all()
         paginator = Paginator(games, 2)
         page = request.GET.get('page')
@@ -22,14 +23,21 @@ class GameView(View):
         return render(request, 'templates/gamesPage.html',
                       {'game_list': posts})
 
-
-class DetailGameView(View):
-    def get(self, request, slug):
+    def showDetailView(request, slug) -> render:
         game = Game.objects.get(url=slug)
         gameShots = GameShots.objects.filter(game=game)
         tags = Tagged.objects.filter(game=game)
+        cart = Cart.objects.filter(user=request.user, game=game)
+        if request.POST:
+            if 'add' in request.POST:
+                var = Cart()
+                var.game = game
+                var.user = request.user
+                var.save()
 
-        return render(request, 'templates/gameInfoPage.html', {'game': game, 'gameShots': gameShots, 'tags': tags})
+        return render(request, 'templates/gameInfoPage.html', {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': len(cart)})
+
+
 
 
 class SearchView(View):

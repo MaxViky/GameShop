@@ -1,11 +1,14 @@
+from urllib import request
+
 from django.conf.urls import url
 from django.urls import path
 
 from . import views
-
+from .views import GameView
 
 urlpatterns = [
-    url('^$', views.GameView.as_view()),
+    url('^$', GameView.GetGamesPage),
     url('^search/', views.SearchView.as_view(), name='search'),
-    path('<slug:slug>/', views.DetailGameView.as_view()),
+    path('<slug:slug>/', GameView.showDetailView),
+
 ]

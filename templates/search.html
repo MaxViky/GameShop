@@ -3,15 +3,25 @@
 
   }
 </style>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <div class="container">
 <div class="search" style="padding-top: 15px; padding-bottom: 10px; ">
-<form action="{% url 'search' %}" class="navbar-form navbar-left" method="get">
+<form action="{% url 'search' %}" class="navbar-form navbar-left" method="GET">
     <div class="input-group">
         <input id="search" name="name" type="text" class="form-control" placeholder="Поиск">
     </div>
 </form>
+    <details class="white" style="padding-top: 10px;">
+  <summary >Поиск по критериям</summary>
+  <form method="GET">
+      <table>
+      {{ filter_form.as_table }}
+          </table>
+      <input value="Поиск" type="submit" class="btn mediumBlue White"
+                   name="filter_btn"/>
+  </form>
+
+</details>
+
 </div>
   </div>
 

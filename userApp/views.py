@@ -1,8 +1,10 @@
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
+from django.views import View
 
 from userApp.forms import *
+from userApp.models import Profile
 
 
 def LogIn(request):
@@ -43,3 +45,8 @@ def register(request):
     else:
         user_form = regForms()
     return render(request, 'templates/RegistrationForm.html', {'reg_form': user_form})
+
+
+class ProfileView(View):
+    def getProfile(request, user):
+        return render(request, 'templates/profile.html')
