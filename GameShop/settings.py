@@ -80,6 +80,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'GameShop.wsgi.application'
 
 AUTH_PROFILE_MODULE = 'accounts.Profile'
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 

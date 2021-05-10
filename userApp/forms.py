@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.forms import PasswordInput
 
+from userApp.models import Profile
+
 
 class loginForm(forms.Form):
     username = forms.CharField(label='Имя пользователя', required=False)
@@ -21,3 +23,5 @@ class regForms(forms.ModelForm):
         if cd['password1'] != cd['password2']:
             raise forms.ValidationError('Пароли не совпадают')
         return cd['password2']
+
+

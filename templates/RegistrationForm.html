@@ -1,0 +1,15 @@
+{% extends 'templates/default.html' %}
+{% block title %} Регистрация {% endblock %}
+
+{% block content %}
+<div class="container" style="padding:30px;">
+    <H2 class="text-center"><font color="White">Регистрация</font></H2>
+        <form method="POST" >
+            {% csrf_token %}
+         <table class="">
+        {{ reg_form.as_table }}
+    </table>
+            <input style="margin-top:10px;" type="submit" class="btn mediumBlue btn-md white" value="Зарегистрироваться" name="regbut">
+</form>
+</div>
+{% endblock %}

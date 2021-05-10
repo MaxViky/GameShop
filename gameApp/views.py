@@ -27,14 +27,16 @@ class GameView(View):
         game = Game.objects.get(url=slug)
         gameShots = GameShots.objects.filter(game=game)
         tags = Tagged.objects.filter(game=game)
-        cart = Cart.objects.filter(user=request.user, game=game)
-        if request.POST:
-            if 'add' in request.POST:
-                var = Cart()
-                var.game = game
-                var.user = request.user
-                var.save()
-
+        if User.is_authenticated and request.user is not 'AnonymousUser':
+            cart = Cart.objects.filter(user=request.user, game=game)
+            if request.POST:
+                if 'add' in request.POST:
+                    var = Cart()
+                    var.game = game
+                    var.user = request.user
+                    var.save()
+        else:
+            cart = null
         return render(request, 'templates/gameInfoPage.html', {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': len(cart)})
 
 

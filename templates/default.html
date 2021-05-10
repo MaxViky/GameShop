@@ -59,12 +59,13 @@ div#global_header .content {
                         </li>
 
                     {% if request.user.is_authenticated %}
-                        <li style="padding-right: 10px;" class="nav-item"> <a type="submit"
-                                                                              onclick="return confirm('Вы действительно хотите выйти?')"
-                                                 class="nav-link" href="/logout"> <font color="White">{{ user }}(Выйти)</font></a> </li>
-                    {% else %}
-                        <li class="nav-item"> <a class="nav-link" href="/login"> <font color="White">ВОЙТИ</font> </a> </li>
-                    {% endif %}
+                        <li style="padding-left: 550px;"  class="nav-item"> <a type="submit" onclick="return confirm('Вы действительно хотите выйти?')"
+                                                 class="nav-link" href="/logout"> <font  color="White">
+                            {{ user.username|truncatechars:8 }}(Выйти)
+                        </font></a> </li>
+                        {% else %}
+                        <li class="nav-item"> <a style="text-align: left;" class="nav-link" href="/login"> <font color="White">ВОЙТИ</font> </a> </li>
+                        {% endif %}
                         </ul>
                 </div>
             </nav>
