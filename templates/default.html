@@ -53,7 +53,10 @@ div#global_header .content {
                         <li class="nav-item"><a class="nav-link" href="/"> <font color="White">ГЛАВНАЯ</font></a></li>
                         <li class="nav-item"><a class="nav-link" href="/games/?page=1"> <font color="White">МАГАЗИН</font></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="/profile/{{ user }}"> <font color="White">ПРОФИЛЬ</font></a>
+
+                        <li class="nav-item"><a class="nav-link"
+                                                href="{% if request.user.is_authenticated %}/profile/{{ user }}{% else %}/login{% endif %}">
+                            <font color="White">ПРОФИЛЬ</font></a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/friends"> <font color="White">ДРУЗЬЯ</font></a>
                         </li>

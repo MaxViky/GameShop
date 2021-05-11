@@ -9,5 +9,5 @@ urlpatterns = [
     url('^login/$', views.LogIn),
     url('^logout/', views.LogOut, name='logout'),
     path('profile/<str:user>/', ProfileView.getProfile),
-
+    path('profile/edit/<str:user>/', ProfileView.editProfile, name='edit_profile'),
 ]
