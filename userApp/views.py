@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.views import View
 
+from gameApp.models import GameLibrary
+from gameApp.views import Library
 from userApp.forms import *
 from userApp.models import Profile
 
@@ -49,7 +51,7 @@ def register(request):
 
 class ProfileView(View):
     def getProfile(request, user):
-        return render(request, 'templates/profile.html')
+        return render(request, 'templates/profile.html', {'game_list': Library.get(request)})
 
     def editProfile(request, user):
         if request.method == 'POST':

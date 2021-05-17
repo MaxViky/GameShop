@@ -1,13 +1,35 @@
 {% extends 'templates/default.html' %}
 {% block title %}{{user}}{% endblock %}
-
 {% block content %}
-<h1>Редактирование профиля</h1>
+<style>
+.profile-img {
+height: 230px;
+    width: 165px;
+    position: relative;
+    }
+    .profile-view{
+display: flex;
+padding-left: 0px;
+padding-top: 15px;
+padding-bottom: 10px;
+}
+
+</style>
+<div class="container profile-view">
+    <div>
+        <img class="profile-img" src="{{ user.profile.photo.url }}" alt="">
+    </div>
+    <div style="padding-left: 15px;">
+<h2>Редактирование профиля</h2>
     <p>You can edit your account using the following form:</p>
     <form method="POST" enctype="multipart/form-data">
+        <table>
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
+            </table>
         {% csrf_token %}
-        <p><input type="submit" value="Сохранить"></p>
+        <input style="" type="submit" value="Сохранить">
     </form>
+        </div>
+</div>
 {% endblock %}

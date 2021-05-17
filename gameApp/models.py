@@ -115,3 +115,15 @@ class Cart(models.Model):
     class Meta:
         verbose_name = 'Корзина'
         verbose_name_plural = 'Корзины'
+
+
+class GameLibrary(models.Model):
+    user = models.ForeignKey(User, verbose_name='Пользователь', max_length=50, on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, verbose_name='Игра', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{0} - {1}".format(self.user, self.game)
+
+    class Meta:
+        verbose_name = 'Библиотека'
+        verbose_name_plural = 'Библиотеки'

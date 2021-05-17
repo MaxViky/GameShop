@@ -28,6 +28,7 @@ class GameView(View):
         gameShots = GameShots.objects.filter(game=game)
         tags = Tagged.objects.filter(game=game)
         if User.is_authenticated and request.user is not 'AnonymousUser':
+            lib = GameLibrary.objects.filter(user=request.user, game=game)
             cart = Cart.objects.filter(user=request.user, game=game)
             if request.POST:
                 if 'add' in request.POST:
@@ -36,10 +37,10 @@ class GameView(View):
                     var.user = request.user
                     var.save()
         else:
+            lib = null
             cart = null
-        return render(request, 'templates/gameInfoPage.html', {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': len(cart)})
-
-
+        return render(request, 'templates/gameInfoPage.html',
+                            {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': len(cart), 'lib': len(lib)})
 
 
 class SearchView(View):
@@ -60,4 +61,19 @@ class SearchView(View):
                 games['game_list'] = paginator.page(paginator.num_pages)
 
         return render(request, template_name='templates/gamesPage.html', context=games)
+
+
+class Library(View):
+    def get(request):
+        lib = GameLibrary.objects.filter(user=request.user)
+        paginator = Paginator(lib, 2)
+        page = request.GET.get('page')
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        return posts
+
 

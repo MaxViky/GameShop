@@ -3,13 +3,38 @@
 
 {% block content %}
 <style>
-   .purple { background: #8351fe; }
-   .white { color: #ffffff }
-  </style>
-<div class="container">
-  <h2 align="center">
-    <font color="white">Welcome to Yumes, friend!</font>
-  </h2>
 
+  </style>
+<div class="container" >
+  <h2 align="center">
+    <font color="white">Добро пожаловать</font>
+  </h2>
 </div>
+<div class="row">
+{% for game in games_popular %}
+        <div class="short-item">
+            <div class="article-game">
+                <div class="article-game-image">
+                    <a href="/games/{{ game.url }}">
+                        <img class="article-img" src="{{ game.poster.url }}" alt="">
+                    </a>
+                </div>
+                <center>
+                    <div class="article-game-title">
+                        <a> <font color="White">{{ game.name }}</font></a>
+                        {% if game.price > 0 %}
+                    <div>
+                        <a> <font color="White">{{ game.price }} руб.</font></a>
+                    </div>
+                    {% else %}
+                    <div>
+                        <a> <font color="White">Бесплатно</font></a>
+                    </div>
+                    {% endif %}
+                    </div>
+                </center>
+            </div>
+        </div>
+        {% endfor %}
+  </div>
 {% endblock %}

@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f5da27c-5236-4543-b423-68896ce9ef78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/editProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/LoginForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/LoginForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gameInfoPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gameInfoPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gamesPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gamesPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620641650969</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add edit profile">
+      <created>1620710804688</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1620710804688</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -221,37 +235,38 @@
     <MESSAGE value="add tags" />
     <MESSAGE value="add confirm for exit" />
     <MESSAGE value="add profile and cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="add profile and cart" />
+    <MESSAGE value="add edit profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="add edit profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1620707988892">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="479" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1620707988892" />
-    <state x="363" y="13" key="CommitChangelistDialog2" timestamp="1620641648530">
+    <state x="363" y="13" key="CommitChangelistDialog2" timestamp="1620710802273">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="363" y="13" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1620641648530" />
+    <state x="363" y="13" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1620710802273" />
     <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1620707371460">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1620707371460" />
-    <state width="1419" height="276" key="GridCell.Tab.0.bottom" timestamp="1619943708073">
+    <state width="709" height="222" key="GridCell.Tab.0.bottom" timestamp="1620710817819">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1419" height="276" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
-    <state width="1419" height="276" key="GridCell.Tab.0.center" timestamp="1619943708073">
+    <state width="709" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1620710817819" />
+    <state width="709" height="222" key="GridCell.Tab.0.center" timestamp="1620710817819">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1419" height="276" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
-    <state width="1419" height="276" key="GridCell.Tab.0.left" timestamp="1619943708073">
+    <state width="709" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1620710817819" />
+    <state width="709" height="222" key="GridCell.Tab.0.left" timestamp="1620710817818">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1419" height="276" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
-    <state width="1419" height="276" key="GridCell.Tab.0.right" timestamp="1619943708073">
+    <state width="709" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1620710817818" />
+    <state width="709" height="222" key="GridCell.Tab.0.right" timestamp="1620710817819">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1419" height="276" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1619943708073" />
+    <state width="709" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1620710817819" />
     <state width="1419" height="276" key="GridCell.Tab.1.bottom" timestamp="1619943708074">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -284,18 +299,18 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1618469984303" />
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1620641654520">
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1620710807795">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1620641654520" />
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1620710807795" />
     <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1619808949427">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808949427" />
-    <state x="415" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1620707191695">
+    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1621236756852">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="415" y="253" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1620707191695" />
+    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1621236756852" />
     <state x="529" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619813986134">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

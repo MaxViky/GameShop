@@ -12,6 +12,7 @@
             crossorigin="anonymous"></script>
     {% load static %}
     <style>
+
     .blackBlue { background: #12283e; }
     .darkBlue { background: #12475c; }
     .mediumBlue { background: #146e81; }
@@ -40,6 +41,36 @@ div#global_header .content {
  width: 100%;
  display: flex;
 }
+.article-img {
+    height: 230px;
+    width: 165px;
+    border-radius: 2px;
+}
+.article-game {
+    display: inline-block;
+    margin-right: 22px;
+    min-height: 30px;
+    position: relative;
+    vertical-align: top;
+    width: 163px;
+}
+.article-game-image {
+    height: 230px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    position: relative;
+    width: 163px;
+}
+.article-game-title {
+    padding-bottom: 2px;
+}
+.short-item {
+    width: 165px;
+    padding-top: 10px;
+    height: auto;
+    margin-right: 5%;
+    float: left;
+}
     </style>
 </head>
 <body>
@@ -67,7 +98,7 @@ div#global_header .content {
                             {{ user.username|truncatechars:8 }}(Выйти)
                         </font></a> </li>
                         {% else %}
-                        <li class="nav-item"> <a style="text-align: left;" class="nav-link" href="/login"> <font color="White">ВОЙТИ</font> </a> </li>
+                        <li class="nav-item" style="padding-left: 550px;"> <a style="text-align: left;" class="nav-link" href="/login"> <font color="White">ВОЙТИ</font> </a> </li>
                         {% endif %}
                         </ul>
                 </div>
