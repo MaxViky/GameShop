@@ -1,0 +1,37 @@
+{% extends 'templates/default.html' %}
+{% block title %} Корзина {% endblock %}
+{% block content %}
+<style>
+    .media-object{
+    height: 175px;
+    width: 120px;
+    }
+</style>
+<br>{% if games %}
+{% for cart in games %}
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            <img class="media-object" src="{{ cart.game.poster.url }}" alt="img">
+        </a>
+    </div>
+    <div style="padding-left: 10px;" class="media-body">
+        <h4 class="media-heading"><a href="#">{{ cart.game.name }}</a></h4>
+        <span class="mu-menu-price">{{ cart.game.price }} руб.</span>
+        <p>{{ cart.game.description }}</p>
+    </div>
+</div>
+<br>
+{% endfor %}
+<h4>Итого: {{ sum_cart.price }} руб.</h4>
+<br>
+<form action="" method="POST">
+     {% csrf_token %}
+<input class="btn mediumBlue btn-md white" style="margin-top:10px; margin-bottom: 10px;" type="submit" name="buy" id="buy" value="Купить">
+</form>
+    <br>
+{% else %}
+        <p style="color: White;">Здесь пока пусто :(</p>
+    {% endif %}
+<br>
+{% endblock %}

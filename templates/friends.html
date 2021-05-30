@@ -1,0 +1,22 @@
+{% extends 'templates/default.html' %}
+{% block title %}Магазин{% endblock %}
+
+{% block content %}
+<ul>
+{% for friend in friends %}
+<a>
+
+    <div class="media">
+    <div class="media-left">
+    </div>
+    <div style="padding-left: 10px;" class="media-body">
+        <h4 class="media-heading"><a >{{ friend.friend }}</a></h4>
+        <span class="mu-menu-price"></span>
+
+    </div>
+</div>
+</a>
+
+{% endfor %}
+    </ul>
+{% endblock %}

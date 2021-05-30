@@ -9,14 +9,14 @@
     {% if game_list %}
     <div class="row" style="padding-top: 15px; margin-left: 0px;">
         {% for game in game_list %}
-        <div class="short-item">
-            <div class="article-game">
+        <div class="short-item " >
+            <div class="article-game " >
                 <div class="article-game-image">
                     <a href="/games/{{ game.url }}">
-                        <img class="article-img" src="{{ game.poster.url }}" alt="">
+                        <img class="article-img" src="{{ game.poster.url }}" alt=""/>
                     </a>
                 </div>
-                <center>
+                <center >
                     <div class="article-game-title">
                         <a> <font color="White">{{ game.name }}</font></a>
                         {% if game.price > 0 %}
@@ -29,7 +29,6 @@
                     </div>
                     {% endif %}
                     </div>
-
                 </center>
             </div>
         </div>

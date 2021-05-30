@@ -12,7 +12,23 @@ from gameApp.models import*
 class GameView(View):
     def GetGamesPage(request) -> render:
         games = Game.objects.all()
-        paginator = Paginator(games, 2)
+        gameform = filterForm(request.GET)
+        if 'filter' in request.GET:
+            if gameform.is_valid():
+                if gameform.cleaned_data["price"]:
+                    games = games.filter(price=gameform.cleaned_data["price"])
+                if gameform.cleaned_data["publisher"]:
+                    games = games.filter(Publisher__name=gameform.cleaned_data["publisher"])
+                if gameform.cleaned_data["developer"]:
+                    games = games.filter(Developer__name=gameform.cleaned_data["developer"])
+                if gameform.cleaned_data["rating"]:
+                    games = games.filter(rating=gameform.cleaned_data["rating"])
+                if gameform.cleaned_data["release"]:
+                    games = games.filter(release=gameform.cleaned_data["release"])
+            return render(request, 'templates/gamesPage.html',
+                          {'game_list': games, 'filter_form': gameform})
+
+        paginator = Paginator(games, 5)
         page = request.GET.get('page')
         try:
             posts = paginator.page(page)
@@ -21,13 +37,13 @@ class GameView(View):
         except EmptyPage:
             posts = paginator.page(paginator.num_pages)
         return render(request, 'templates/gamesPage.html',
-                      {'game_list': posts})
+                      {'game_list': posts, 'filter_form': gameform})
 
     def showDetailView(request, slug) -> render:
         game = Game.objects.get(url=slug)
         gameShots = GameShots.objects.filter(game=game)
         tags = Tagged.objects.filter(game=game)
-        if User.is_authenticated and request.user is not 'AnonymousUser':
+        if request.user.is_authenticated:
             lib = GameLibrary.objects.filter(user=request.user, game=game)
             cart = Cart.objects.filter(user=request.user, game=game)
             if request.POST:
@@ -36,11 +52,38 @@ class GameView(View):
                     var.game = game
                     var.user = request.user
                     var.save()
+            cart = len(cart)
+            lib = len(lib)
         else:
             lib = null
             cart = null
+            if request.POST:
+                if 'add' in request.POST:
+                    return redirect("/login")
         return render(request, 'templates/gameInfoPage.html',
-                            {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': len(cart), 'lib': len(lib)})
+                            {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': cart, 'lib': lib})
+
+    def sort(request):
+        games = Game.objects.all()
+        gameform = filterForm(request.GET)
+        if 'price_up' in request.GET:
+            games = games.order_by("price")
+        if 'price_down' in request.GET:
+            games = games.order_by("-price")
+        if 'developer_up' in request.GET:
+            games = games.order_by("developer__name")
+        if 'developer_down' in request.GET:
+            games = games.order_by("-developer__name")
+        if 'publisher_up' in request.GET:
+            games = games.order_by("publisher__name")
+        if 'publisher_down' in request.GET:
+            games = games.order_by("-publisher__name")
+        if 'count_download_up' in request.GET:
+            games = games.order_by("count_download")
+        if 'count_download_down' in request.GET:
+            games = games.order_by("-count_download")
+        return render(request, 'templates/gamesPage.html',
+                      {'game_list': games, 'filter_form': gameform})
 
 
 class SearchView(View):
@@ -59,7 +102,6 @@ class SearchView(View):
                 games['game_list'] = paginator.page(1)
             except EmptyPage:
                 games['game_list'] = paginator.page(paginator.num_pages)
-
         return render(request, template_name='templates/gamesPage.html', context=games)
 
 
@@ -77,3 +119,7 @@ class Library(View):
         return posts
 
 
+class CartUser(View):
+    def get(request):
+        cart = Cart.objects.filter(user=request.user)
+        return cart

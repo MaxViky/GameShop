@@ -22,20 +22,20 @@ background-color: #12283e;
 </style>
 {% load i18n %}
 <ul class="pagination">
-    {% if game_list.number|add:-3 > 1 %}
+    {% if page.number|add:-3 > 1 %}
             <li class="pagination__item">
-                <a href="?page=1">1</a>
+                <a href="/?page=1">1</a>
             </li>
         {% endif %}
-    {% if game_list.has_previous %}
+    {% if page.has_previous %}
     <li>
-        <a class="previous" href="?page={{ game_list.previous_page_number }}{% if request.GET.name %}&name={{request.GET.name }}{% endif %}">{% trans 'Предыдущая' %}
+        <a class="previous" href="?page={{ page.previous_page_number }}{% if request.GET.name %}&name={{request.GET.name }}{% endif %}">{% trans 'Предыдущая' %}
         </a>
     </li>
     {% endif %}
-        {% for n in game_list.paginator.page_range %}
-            {% if n > game_list.number|add:-3 and n < game_list.number|add:3 %}
-                {% if n == game_list.number %}
+        {% for n in page.paginator.page_range %}
+            {% if n > page.number|add:-3 and n < page.number|add:3 %}
+                {% if n == page.number %}
                     <li>
                         <a class="active" href='?page={{ n }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}'>{{ n }}</a>
                     </li>
@@ -46,10 +46,9 @@ background-color: #12283e;
                 {% endif %}
             {% endif %}
         {% endfor %}
-    {% if game_list.has_next %}
+    {% if page.has_next %}
     <li>
-        <a class="Next" href="?page={{ game_list.next_page_number }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}">
+        <a class="Next" href="?page={{ page.next_page_number }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}">
             {% trans 'Следующая' %}</a>
     </li>
     {% endif %}
-</ul>

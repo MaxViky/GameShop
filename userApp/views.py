@@ -1,12 +1,14 @@
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
+from django.db.models import Sum
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 
-from gameApp.models import GameLibrary
-from gameApp.views import Library
+from gameApp.models import GameLibrary, Game
+from gameApp.views import Library, CartUser
 from userApp.forms import *
-from userApp.models import Profile
+from userApp.models import *
 
 
 def LogIn(request):
@@ -65,3 +67,24 @@ class ProfileView(View):
             profile_form = ProfileEditForm(instance=request.user.profile)
         return render(request, 'templates/editProfile.html', {'user_form': user_form, 'profile_form': profile_form})
 
+    def getCart(request, user):
+        games_in_cart = CartUser.get(request)
+        sum_games_in_cart = games_in_cart.aggregate(price=Sum("game__price"))
+        if 'buy' in request.POST:
+            for i in games_in_cart:
+                lib = GameLibrary()
+                lib.user = request.user
+                lib.game = i.game
+                GameLibrary.save(lib)
+                game = Game.objects.get(id=i.game.id)
+                game.count_download += 1
+                game.save()
+            games_in_cart.delete()
+            return redirect("/")
+        return render(request, 'templates/cart.html', {'games': games_in_cart, 'sum_cart': sum_games_in_cart})
+
+
+class Friends(View):
+    def get(request, user):
+        frds = friends.objects.filter(user=request.user)
+        return render(request, 'templates/friends.html', {'friends': frds})

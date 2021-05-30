@@ -10,18 +10,11 @@
         <input id="search" name="name" type="text" class="form-control" placeholder="Поиск">
     </div>
 </form>
-    <details class="white" style="padding-top: 10px;">
-  <summary >Поиск по критериям</summary>
-  <form method="GET">
-      <table>
-      {{ filter_form.as_table }}
-          </table>
-      <input value="Поиск" type="submit" class="btn mediumBlue White"
-                   name="filter_btn"/>
-  </form>
-
-</details>
-
 </div>
-  </div>
+    <details class="white">
+        <summary>Сортировка и фильтрация</summary>
+        {% include "templates/gameSort.html" %}
+        {% include "templates/filter.html" %}
+    </details>
+</div>
 

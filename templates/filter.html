@@ -1,0 +1,9 @@
+<div class="container white">
+    <p>Фильтрация:</p>
+    <form action="{% url 'shop_frame' %}" method="GET">
+        {{ filter_form.as_p }}
+    <div class="input-group">
+        <input type="submit" id="filter" name="filter" value="Фильтровать">
+    </div>
+        </form>
+</div>
