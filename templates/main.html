@@ -5,11 +5,8 @@
 <style>
 
   </style>
-<div class="container" >
-  <h2 align="center">
-    <font color="white">Добро пожаловать</font>
-  </h2>
-</div>
+<div class="white container" style="margin-top: 10px;">
+  <h1>Популярные игры</h1>
 <div class="row">
 {% for game in games_popular %}
         <div class="short-item">
@@ -37,4 +34,35 @@
         </div>
         {% endfor %}
   </div>
+    <h2 align="center">
+    <font color="white">Новинки {{ year }}</font>
+  </h2>
+<div class="row">
+{% for game in games_new_release %}
+        <div class="short-item">
+            <div class="article-game">
+                <div class="article-game-image">
+                    <a href="/games/{{ game.url }}">
+                        <img class="article-img" src="{{ game.poster.url }}" alt="">
+                    </a>
+                </div>
+                <center>
+                    <div class="article-game-title">
+                        <a> <font color="White">{{ game.name }}</font></a>
+                        {% if game.price > 0 %}
+                    <div>
+                        <a> <font color="White">{{ game.price }} руб.</font></a>
+                    </div>
+                    {% else %}
+                    <div>
+                        <a> <font color="White">Бесплатно</font></a>
+                    </div>
+                    {% endif %}
+                    </div>
+                </center>
+            </div>
+        </div>
+        {% endfor %}
+  </div>
+    </div>
 {% endblock %}

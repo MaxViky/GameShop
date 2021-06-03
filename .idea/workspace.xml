@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f5da27c-5236-4543-b423-68896ce9ef78" name="Default Changelist" comment="">
+    <list default="true" id="1f5da27c-5236-4543-b423-68896ce9ef78" name="Default Changelist" comment="add filter and sort with cart">
       <change afterPath="$PROJECT_DIR$/static/css/img/dot.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/css/img/header-bg.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/css/img/select.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/css/img/sprite-skin-nice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ChatWithUser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/filter.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/friends.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/gameSort.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameShop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameShop/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/LoginForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/LoginForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ChatWithUser.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gameInfoPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gameInfoPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gameSort.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gameSort.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/gamesPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gamesPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/views.py" afterDir="false" />
     </list>
@@ -66,16 +66,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/media/usersPhoto" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Diploma\GameShop" />
+      <recent name="E:\Projects\Diploma\GameShop\gameApp" />
+      <recent name="E:\Projects\Diploma\GameShop\GameShop" />
+      <recent name="E:\Projects\Diploma\GameShop\main" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projects\Diploma\GameShop\static" />
       <recent name="E:\Projects\Diploma\GameShop\media\usersPhoto" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\Diploma\GameShop" />
-      <recent name="E:\Projects\Diploma\GameShop\main" />
     </key>
   </component>
   <component name="RunManager" selected="Python.forms">
@@ -239,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621236811947</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add filter and sort with cart">
+      <created>1622407778340</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622407778340</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -274,17 +283,18 @@
     <MESSAGE value="add profile and cart" />
     <MESSAGE value="add edit profile" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="add filter and sort with cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="add filter and sort with cart" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622406688437">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="479" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1622406688437" />
-    <state x="363" y="13" key="CommitChangelistDialog2" timestamp="1621236803653">
+    <state x="363" y="13" key="CommitChangelistDialog2" timestamp="1622690262178">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="363" y="13" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1621236803653" />
+    <state x="363" y="13" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1622690262178" />
     <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1620707371460">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -329,26 +339,26 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="432" y="145" key="MultipleFileMergeDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808821845" />
-    <state x="557" y="140" key="RollbackChangesDialog" timestamp="1620538433538">
+    <state x="557" y="140" key="RollbackChangesDialog" timestamp="1622682005667">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="557" y="140" key="RollbackChangesDialog/0.0.1440.860@0.0.1440.860" timestamp="1620538433538" />
-    <state x="221" y="72" key="SettingsEditor" timestamp="1618469984303">
+    <state x="557" y="140" key="RollbackChangesDialog/0.0.1440.860@0.0.1440.860" timestamp="1622682005667" />
+    <state x="221" y="72" key="SettingsEditor" timestamp="1622647245252">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1618469984303" />
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1621236821193">
+    <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1622647245252" />
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1622647647257">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1621236821193" />
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622647647257" />
     <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1619808949427">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808949427" />
-    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1622407359778">
+    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1622680712867">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1622407359778" />
+    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1622680712867" />
     <state x="529" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619813986134">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -361,5 +371,13 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="443" y="221" key="git4idea.merge.GitPullDialog/0.0.1440.860@0.0.1440.860" timestamp="1619813969108" />
+    <state x="525" y="294" key="git4idea.rebase.GitRebaseDialog" timestamp="1622646556560">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="525" y="294" key="git4idea.rebase.GitRebaseDialog/0.0.1440.860@0.0.1440.860" timestamp="1622646556560" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1622654074848">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1622654074848" />
   </component>
 </project>

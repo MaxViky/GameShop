@@ -91,7 +91,8 @@ div#global_header .content {
                                                 href="{% if request.user.is_authenticated %}/profile/{{ user }}{% else %}/login{% endif %}">
                             ПРОФИЛЬ</a>
                         </li>
-                        <li class="nav-item"><a class=" white nav-link" href="{% url 'user_cart' user=user %}" type="submit">КОРЗИНА</a>
+                        <li class="nav-item"><a class=" white nav-link" href="{% if request.user.is_authenticated %}
+                        {% url 'user_cart' user=user %}{% else %}/login{% endif %}" type="submit">КОРЗИНА</a>
                         </li>
 
                     {% if request.user.is_authenticated %}
@@ -109,7 +110,7 @@ div#global_header .content {
     </div>
 </header>
 
-<div class="darkBlue">
+<div class="darkBlue" style="padding-bottom: 200px;">
     <div class="darkBlue search">
     {% include "templates/search.html" %}
 </div>

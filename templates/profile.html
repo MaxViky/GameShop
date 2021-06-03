@@ -41,14 +41,15 @@ padding-bottom: 10px;
 <div>
     <p><H3>МОЯ БИБЛИОТЕКА</H3></p>
     {% if game_list %}
+    <div>
  {% for lib in game_list %}
-<a class="article-img">
+<a class="article-img" style="">
                     <a href="/games/{{ lib.game.url }}">
                         <img class="article-img" src="{{ lib.game.poster.url }}" alt="">
                     </a>
                 </a>
     {% endfor %}
-
+</div>
 </div>
 <div class="container" style="padding: 20px;" align="center">
     {% include "templates/pagination.html" with page=game_list %}

@@ -41,6 +41,8 @@
         <br>
         <font color="White"> Разработчик: </font> <a href="#"> {{ game.developer }} </a>
         <br>
+        <font color="White"> Количество скачиваний: </font> <a> {{ game.count_download }} </a>
+        <br>
         <font color="White"> Жанры: </font>
         {% for tag in tags %}
         <a href = "#"> {{ tag.label.name }}</a>
