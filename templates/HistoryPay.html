@@ -1,0 +1,32 @@
+{% extends 'templates/default.html' %}
+{% block title %} Корзина {% endblock %}
+{% block content %}
+<style>
+    .media-object{
+    height: 175px;
+    width: 120px;
+    }
+</style>
+<br>{% if HistoryPay %}
+{% for hp in HistoryPay %}
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            <img class="media-object" src="{{ hp.game.poster.url }}" alt="img">
+        </a>
+    </div>
+    <div style="padding-left: 10px;" class="media-body">
+        <h4 class="media-heading"><a class="menuitems_color" href="#">{{ hp.game.name }}</a></h4>
+        <span class="mu-menu-price">{{ hp.game.price }} руб.</span>
+        <p>{{ hp.datePay }}</p>
+    </div>
+</div>
+<br>
+{% endfor %}
+<br>
+    <br>
+{% else %}
+        <p style="color: White;">Здесь пока пусто :(</p>
+    {% endif %}
+<br>
+{% endblock %}

@@ -2,26 +2,116 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f5da27c-5236-4543-b423-68896ce9ef78" name="Default Changelist" comment="add filter and sort with cart">
-      <change afterPath="$PROJECT_DIR$/static/css/img/dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/img/header-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/img/select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/img/sprite-skin-nice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-accessories.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-armchair.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-barset.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-bathroom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-bedroom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-bookcase.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-cabinet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-carpet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-chair.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-dining.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-kidsroom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-kitchen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-mediacabinet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-nightstand.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-office.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-shocabinet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-sofa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-wardrobe.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-accessories.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-armchair.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-barset.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-bathroom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-bedroom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-bookcase.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-cabinet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-carpet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-chair.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-dining.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-kidsroom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-kitchen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-mediacabinet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-nightstand.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-office.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-shocabinet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-sofa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/light/icon-wardrobe.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/sliders.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/bedroom-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/bedroom-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/bedroom-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/bedroom-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/box-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/box-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/box-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/box-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/box-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/category-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/category-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/divano-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/divano-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/gallery-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/idea-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/idea-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/idea-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/idea-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/item-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/m-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/map-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/person-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/person-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/person-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/person-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-slide-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/product-slide-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/slide-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/slide-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/slide-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/specs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/user.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/HistoryPay.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameShop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameShop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ChatWithUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/LoginForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/LoginForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/filter.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/gameInfoPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gameInfoPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/gameSort.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gameSort.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/gamesPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gamesPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pagination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/views.py" afterDir="false" />
     </list>
@@ -65,19 +155,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/media/usersPhoto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/assets/icons" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\Diploma\GameShop" />
-      <recent name="E:\Projects\Diploma\GameShop\gameApp" />
-      <recent name="E:\Projects\Diploma\GameShop\GameShop" />
-      <recent name="E:\Projects\Diploma\GameShop\main" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\Diploma\GameShop\static\assets\icons" />
+      <recent name="E:\Projects\Diploma\GameShop\templates" />
       <recent name="E:\Projects\Diploma\GameShop\static" />
       <recent name="E:\Projects\Diploma\GameShop\media\usersPhoto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Diploma\GameShop" />
+      <recent name="E:\Projects\Diploma\GameShop\GameShop" />
+      <recent name="E:\Projects\Diploma\GameShop\gameApp" />
+      <recent name="E:\Projects\Diploma\GameShop\main" />
     </key>
   </component>
   <component name="RunManager" selected="Python.forms">
@@ -339,26 +431,26 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="432" y="145" key="MultipleFileMergeDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808821845" />
-    <state x="557" y="140" key="RollbackChangesDialog" timestamp="1622682005667">
+    <state x="557" y="140" key="RollbackChangesDialog" timestamp="1623004753358">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="557" y="140" key="RollbackChangesDialog/0.0.1440.860@0.0.1440.860" timestamp="1622682005667" />
+    <state x="557" y="140" key="RollbackChangesDialog/0.0.1440.860@0.0.1440.860" timestamp="1623004753358" />
     <state x="221" y="72" key="SettingsEditor" timestamp="1622647245252">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1622647245252" />
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1622647647257">
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1622690273748">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622647647257" />
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622690273748" />
     <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1619808949427">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="92" y="92" width="1256" height="676" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1440.860@0.0.1440.860" timestamp="1619808949427" />
-    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1622680712867">
+    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1623212527763">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1622680712867" />
+    <state x="415" y="253" width="609" height="352" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1623212527763" />
     <state x="529" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619813986134">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -375,9 +467,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="525" y="294" key="git4idea.rebase.GitRebaseDialog/0.0.1440.860@0.0.1440.860" timestamp="1622646556560" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1622654074848">
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1623138504139">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1622654074848" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1623138504139" />
   </component>
 </project>

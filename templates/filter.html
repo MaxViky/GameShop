@@ -1,9 +1,84 @@
-<div class="container white">
-    <p>Фильтрация:</p>
-    <form action="{% url 'shop_frame' %}" method="GET">
-        {{ filter_form.as_p }}
-    <div class="input-group">
-        <input type="submit" id="filter" name="filter" value="Фильтровать">
+<div class="filters filters-fixed">
+    <div class="filter-scroll menu_color ">
+        <div class="filter-header">
+            <span class="h4">Фильтрация</span>
+            <br>
+        </div>
+        <hr>
+        <form action="{% url 'filter' %}" method="GET">
+        <div class="filter-box active">
+            <div class="title">Цена</div>
+
+            <div class="filter-content" style="display: block;">
+                <input type="text" id="range-price-slider" value="" name="range" class="irs-hidden-input" tabindex="-1" readonly="">
+            </div>
+            <input class="button_color btn" type="submit" name="filter" value="Фильтр">
+
+        </div>
+            </form>
+        <div class="filter-box active">
+            <div class="title">
+                Сортировка
+            </div>
+            <div class="filter-content">
+                <form action="{% url 'sort' %}" method="GET">
+                <span class="form-check">
+                    <input class="form-check-input" type="radio" name="radio_button" id="_name_down" checked="checked" value="1">
+                    <label class="form-check-label" for="_name_down">
+                        Название (А-я)
+                    </label>
+                </span>
+                <span class="form-check">
+                    <input class="form-check-input" type="radio" name="radio_button" id="_name_up" value="2">
+                    <label class="form-check-label" for="_name_up">
+                        Название (Я-а)
+                    </label>
+                </span>
+                <span class="form-check">
+                    <input class="form-check-input" type="radio" name="radio_button" id="_price_up" value="3">
+                    <label class="form-check-label" for="_price_up">
+                        Цена (сначала дешёвые)
+                    </label>
+                </span>
+                <span class="form-check">
+                    <input class="form-check-input" type="radio" name="radio_button" id="_price_down" value="4">
+                    <label class="form-check-label" for="_price_down">
+                        Цена (сначала дорогие)
+                    </label>
+                </span>
+                <span class="form-check">
+                    <input class="form-check-input" type="radio" name="radio_button" id="_release_down" value="5">
+                    <label class="form-check-label" for="_release_down">
+                        Дата выхода (сначала новые)
+                    </label>
+                </span>
+                <span class="form-check">
+                    <input class="form-check-input" type="radio" name="radio_button" id="_release_up" value="6">
+                    <label class="form-check-label" for="_release_up">
+                        Дата выхода (сначала старые)
+                    </label>
+                </span>
+                     <input class="button_color btn" type="submit" name="sort" value="Сортировать">
+                    </form>
+            </div>
+        </div>
+        <div class="filter-box active">
+            <div class="title">
+                Material
+            </div>
+            <div class="filter-content">
+                <span class="radiobutton">
+                    <input type="checkbox" id="matId1">
+                    <label for="matId1">ZAZA</label>
+                </span>
+            </div>
+        </div>
     </div>
-        </form>
+
+    <!-- Close filters on mobile / update filters-->
+
+    <div class="toggle-filters-close btn btn-circle">
+        <i class="icon icon-cross"></i>
+    </div>
+
 </div>

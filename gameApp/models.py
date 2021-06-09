@@ -94,7 +94,6 @@ class Reviews(models.Model):
     user = models.ForeignKey(User, verbose_name='Пользователь', max_length=50, on_delete=models.CASCADE)
     text = models.TextField('Отзыв')
     star = models.PositiveSmallIntegerField('Оценка')
-    parent = models.ForeignKey('self', verbose_name='Родитель', on_delete=models.SET_NULL, blank=True, null=True)
     game = models.ForeignKey(Game, verbose_name='Игра', on_delete=models.CASCADE)
 
     def __str__(self):
@@ -127,3 +126,16 @@ class GameLibrary(models.Model):
     class Meta:
         verbose_name = 'Библиотека'
         verbose_name_plural = 'Библиотеки'
+
+
+class HistoryPay(models.Model):
+    user = models.ForeignKey(User, verbose_name='Пользователь', max_length=50, on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, default=None, verbose_name='Игра', on_delete=models.CASCADE)
+    datePay = models.DateTimeField("Дата покупки")
+
+    def __str__(self):
+        return "Дата:{0} \n{1}".format(self.datePay, self.game)
+
+    class Meta:
+        verbose_name = 'История покупок'
+        verbose_name_plural = 'Истории покупок'

@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
 from django.db.models import Sum
@@ -5,15 +7,13 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 
-from gameApp.forms import filterForm
-from gameApp.models import GameLibrary, Game
+from gameApp.models import GameLibrary, Game, HistoryPay
 from gameApp.views import Library, CartUser
 from userApp.forms import *
 from userApp.models import *
 
 
 def LogIn(request):
-    gameform = filterForm(request.GET)
     invalid = 'Неверный логин или пароль'
     if request.method == 'POST':
         form = loginForm(request.POST)
@@ -26,12 +26,12 @@ def LogIn(request):
                         login(request, user)
                         return redirect("/")
                     else:
-                        return render(request, 'templates/LoginForm.html', {'log_form': form, 'invalid': invalid, 'filter_form': gameform})
+                        return render(request, 'templates/LoginForm.html', {'log_form': form, 'invalid': invalid})
                 else:
-                    return render(request, 'templates/LoginForm.html', {'log_form': form, 'invalid': invalid, 'filter_form': gameform})
+                    return render(request, 'templates/LoginForm.html', {'log_form': form, 'invalid': invalid})
     else:
         form = loginForm()
-    return render(request, 'templates/LoginForm.html', {'log_form': form, 'filter_form': gameform})
+    return render(request, 'templates/LoginForm.html', {'log_form': form})
 
 
 def LogOut(request):
@@ -40,7 +40,6 @@ def LogOut(request):
 
 
 def register(request):
-    gameform = filterForm(request.GET)
     if request.method == 'POST':
         user_form = regForms(request.POST)
         if 'regbut' in request.POST:
@@ -51,16 +50,15 @@ def register(request):
                 return redirect("/")
     else:
         user_form = regForms()
-    return render(request, 'templates/RegistrationForm.html', {'reg_form': user_form, 'filter_form': gameform})
+    return render(request, 'templates/RegistrationForm.html', {'reg_form': user_form})
 
 
 class ProfileView(View):
     def getProfile(request, user):
-        gameform = filterForm(request.GET)
-        return render(request, 'templates/profile.html', {'game_list': Library.get(request), 'filter_form': gameform})
+        return render(request, 'templates/profile.html', {'game_list': Library.get(request)})
 
     def editProfile(request, user):
-        gameform = filterForm(request.GET)
+
         if request.method == 'POST':
             user_form = UserEditForm(instance=request.user, data=request.POST)
             profile_form = ProfileEditForm(instance=request.user.profile, data=request.POST, files=request.FILES)
@@ -70,10 +68,9 @@ class ProfileView(View):
         else:
             user_form = UserEditForm(instance=request.user)
             profile_form = ProfileEditForm(instance=request.user.profile)
-        return render(request, 'templates/editProfile.html', {'user_form': user_form, 'profile_form': profile_form, 'filter_form': gameform})
+        return render(request, 'templates/editProfile.html', {'user_form': user_form, 'profile_form': profile_form})
 
     def getCart(request, user):
-        gameform = filterForm(request.GET)
         games_in_cart = CartUser.get(request)
         sum_games_in_cart = games_in_cart.aggregate(price=Sum("game__price"))
         if 'buy' in request.POST:
@@ -81,14 +78,22 @@ class ProfileView(View):
                 lib = GameLibrary()
                 lib.user = request.user
                 lib.game = i.game
+                history_pay = HistoryPay()
+                history_pay.game = i.game
+                history_pay.user = request.user
+                history_pay.datePay = datetime.datetime.now()
+                HistoryPay.save(history_pay)
                 GameLibrary.save(lib)
                 game = Game.objects.get(id=i.game.id)
                 game.count_download += 1
                 game.save()
             games_in_cart.delete()
             return redirect("/")
-        return render(request, 'templates/cart.html', {'games': games_in_cart, 'sum_cart': sum_games_in_cart, 'filter_form': gameform})
+        return render(request, 'templates/cart.html', {'games': games_in_cart, 'sum_cart': sum_games_in_cart})
 
+    def getHistoryPay(request, user):
+        hp = HistoryPay.objects.filter(user=request.user)
+        return render(request, 'templates/HistoryPay.html', {'HistoryPay': hp})
 
 class Friends(View):
     def get(request, user):

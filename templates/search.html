@@ -1,20 +1,19 @@
 <style>
-  .search input{
-
-  }
 </style>
 <div class="container">
 <div class="search" style="padding-top: 15px; padding-bottom: 10px; ">
-<form action="{% url 'search' %}" class="navbar-form navbar-left" method="GET">
     <div class="input-group">
+    <form action="{% url 'search' %}" method="GET" style="width:90%">
         <input id="search" name="name" type="text" class="form-control" placeholder="Поиск">
-    </div>
-</form>
-</div>
-    <details class="white">
-        <summary>Сортировка и фильтрация</summary>
-        {% include "templates/gameSort.html" %}
-        {% include "templates/filter.html" %}
-    </details>
+    </form>
+    <div style="margin-left:5px;">
+            <a class="btn button_color button_word_color toggle-filters-mobile" href="javascript:void(0);" type="submit">
+                <i class="fa fa-sliders"></i></a>
+        </div>
+    {% include "templates/filter.html" %}
+
 </div>
 
+<a  type="submit" href="javascript:void(0);"></a>
+</div>
+</div>

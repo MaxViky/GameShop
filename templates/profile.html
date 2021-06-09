@@ -5,7 +5,7 @@
 <style>
 .profile-img {
 height: 230px;
-    width: 165px;
+    width: 185px;
     position: relative;
     }
 
@@ -37,9 +37,10 @@ padding-bottom: 10px;
     </div>
 
 </div>
-<a style="margin-top:10px; margin-bottom: 10px;" href="{% url 'edit_profile' user=user %}" type="submit" class="btn mediumBlue btn-md white">Изменить</a>
+<a style="margin-top:10px; margin-bottom: 10px;" href="{% url 'edit_profile' user=user %}" type="submit" class="btn btn-md white">Изменить</a>
+<a class="btn" href="{% url 'history_pay' user=user %}">История</a>
 <div>
-    <p><H3>МОЯ БИБЛИОТЕКА</H3></p>
+    <p><H3>МОЯ БИБЛИОТЕКА</H3><p>
     {% if game_list %}
     <div>
  {% for lib in game_list %}
@@ -50,6 +51,7 @@ padding-bottom: 10px;
                 </a>
     {% endfor %}
 </div>
+
 </div>
 <div class="container" style="padding: 20px;" align="center">
     {% include "templates/pagination.html" with page=game_list %}

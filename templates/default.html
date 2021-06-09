@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Mobile Web-app fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!--Title-->
     <title>{% block title %} {% endblock %}</title>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- custom CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    {% load static %}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- custom JS -->
-    <script src="js/main.js"></script>
+{% load static %}
+    <!--CSS bundle -->
+    <link rel="stylesheet" media="all" href="{% static 'css/bootstrap.css'%}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/animate.css'%}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/font-awesome.css'%}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/ion-range-slider.css'%}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/linear-icons.css'%}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/magnific-popup.css'%}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/owl.carousel.css'%}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/theme.css'%}" />
+
+
+    <!--Scripts -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/ion.rangeSlider.js'%}"></script>
+    <script src="{% static 'js/magnific-popup.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.js'%}"></script>
+    <script src="{% static 'js/tilt.jquery.js'%}"></script>
+    <script src="{% static 'js/jquery.easypiechart.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    <!--Google fonts-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <!-- colors -->
     <style>
+        .menu_color { background: #000000; }
+        .background_color { background: #272727; }
+        .button_color { background: #FFFFFF; }
+        .words_color { color: #FFFFFF; }
+        .button_word_color {color: #000000; }
+        .menuitems_color { color: #40AF47; }
 
-    .blackBlue { background: #12283e; }
-    .darkBlue { background: #12475c; }
-    .mediumBlue { background: #146e81; }
-    .Blue { background: #1aa0ab; }
-    .lightBlue { background: #20dad7; }
-    .white { color: #ffffff }
-
-div#global_header {
-	background: #12283e;
-	background-position: center top;
-	min-width: 940px;
-	font-size: 14px;
-}
-div#global_header .content {
-	background: #12283e;
-	position: relative;
-	width: 940px;
-	height: 104px;
-	margin: 0px auto;
-	z-index: 402;
-}
-
-.footer-bg {
- background: #12283e; /* Цвет фона */
- height: 150px;
- width: 100%;
- display: flex;
-}
-.article-img {
+        .article-img {
     height: 230px;
     width: 165px;
     border-radius: 2px;
@@ -73,45 +80,82 @@ div#global_header .content {
     margin-right: 5%;
     float: left;
 }
+        .btn {
+        background-color: #fff;
+        }
+        .footer-bg {
+             height: 150px;
+             width: 100%;
+             display: flex;
+        }
+        .year-block {
+            background: #000000;
+            color: #FFFFFF;
+            position: absolute;
+            font-weight: 400;
+            top: 0px;
+            right: 0;
+            padding: 2px 10px;
+            z-index: 1;
+        }
     </style>
+
 </head>
-<body>
-<header>
-    <div id="global_header" data-gpnav="columns">
-        <div class="container blackBlue ">
-            <nav class="navbar navbar-expand-lg blackBlue">
-                <a class="navbar-brand"> <font color="White"><h3>Yumes</h3></font> </a>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto ">
-                        <li class="nav-item "><a class=" white nav-link" href="/">ГЛАВНАЯ</a></li>
-                        <li class="nav-item"><a class=" white nav-link" href="/games/?page=1">МАГАЗИН</a>
-                        </li>
 
-                        <li class=" nav-item"><a class=" white nav-link"
-                                                href="{% if request.user.is_authenticated %}/profile/{{ user }}{% else %}/login{% endif %}">
-                            ПРОФИЛЬ</a>
-                        </li>
-                        <li class="nav-item"><a class=" white nav-link" href="{% if request.user.is_authenticated %}
-                        {% url 'user_cart' user=user %}{% else %}/login{% endif %}" type="submit">КОРЗИНА</a>
-                        </li>
+<body class="words_color">
+    <nav class="menu_color">
+            <div class="container">
+                <!-- ==========  Main navigation ========== -->
+                <div class="navigation navigation-main" style="border-bottom: 0px;">
+                    <a href="#" class="open-login menu_color" ><i class="icon icon-user"></i></a>
+                    <a href="#" class="open-search"><i class="icon icon-magnifier"></i></a>
+                    <a href="#" class="open-cart"><i class="icon icon-cart"></i> <span>4</span></a>
+                    <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
 
-                    {% if request.user.is_authenticated %}
-                        <li style="padding-left: 550px;"  class=" white nav-item"> <a type="submit" onclick="return confirm('Вы действительно хотите выйти?')"
-                                                 class=" white nav-link" href="/logout">
-                            {{ user.username|truncatechars:8 }}(Выйти)
-                        </a> </li>
-                        {% else %}
-                        <li class="white nav-item" style="padding-left: 550px;"> <a style="text-align: left;" class=" white nav-link" href="/login">ВОЙТИ</a> </li>
-                        {% endif %}
+                    <div class="floating-menu ">
+                        <!--mobile toggle menu trigger-->
+                        <div class="close-menu-wrapper">
+                            <span class="close-menu"><i class="icon icon-cross"></i></span>
+                        </div>
+                        <ul class="menu_color menuitems_color">
+                            <a class="navbar-brand words_color"><b>YUMES</b></a>
+                            <li>
+                                <a class="menuitems_color" href="/">ГЛАВНАЯ</a>
+                            </li>
+                            <li>
+                                <a class="menuitems_color" href="/games/?page=1">Магазин</a>
+                            </li>
+                            <li>
+                                <a class="menuitems_color" href="#">О НАС</a>
+                            </li>
+                            <li>
+                                <a class="menuitems_color" href="#footer">Связь</a>
+                            </li>
+                            <li style="margin-left: 380px;">
+                                {% if request.user.is_authenticated %}
+                                <a class="menuitems_color" href="/profile/{{ user }}"><i class="icon icon-user"></i></a>
+                                {% else %}
+                                <a class="menuitems_color" href="/login/"><i class="icon icon-user"></i></a>
+                                {% endif %}
+                            </li>
+                            <li>
+                                <a class="menuitems_color" href="{% if request.user.is_authenticated %}
+                        {% url 'user_cart' user=user %}{% else %}/login{% endif %}"><i class="icon icon-cart"></i></a>
+                            </li>
+                            {% if request.user.is_authenticated %}
+                            <li>
+                                <a class="menuitems_color" onclick="return confirm('Вы действительно хотите выйти?')" href="/logout">
+                                    <i class="icon icon-exit"></i></a>
+                            </li>
+                            {% endif %}
                         </ul>
+                    </div>
                 </div>
-            </nav>
-        </div>
-    </div>
-</header>
-
-<div class="darkBlue" style="padding-bottom: 200px;">
-    <div class="darkBlue search">
+            </div>
+        </nav>
+    {% load static %}
+<div class="background_color" style="">
+    <div class="background_color search">
     {% include "templates/search.html" %}
 </div>
     <div class="container white" >
@@ -120,16 +164,18 @@ div#global_header .content {
     </div>
 
 </div>
-<footer class="footer-bg">
-<div class="container white">
+<footer class="menu_color">
+<div class="container menuitems_color">
     Все права защищены
+    <br>
+    <a name="footer">Контактный телефон: +7(937)-270-59-73</a>
+    <br>
+    <a>Почта: YummyGames@mail.ru</a>
+    <br>
     <br>
     <span>
         Сайт разработан студентом группы 17ИС-1
-
     </span>
-    <br>
-    <br>
     <br>
     Якунин Максим
 

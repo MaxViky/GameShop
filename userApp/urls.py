@@ -11,5 +11,6 @@ urlpatterns = [
     path('profile/<str:user>/', ProfileView.getProfile),
     path('profile/edit/<str:user>/', ProfileView.editProfile, name='edit_profile'),
     path('profile/<str:user>/cart/', ProfileView.getCart, name='user_cart'),
+    path('profile/<str:user>/history-pay/', ProfileView.getHistoryPay, name='history_pay'),
     # path('<str:user>/friends/', Friends.get, name='user_friends'),
 ]

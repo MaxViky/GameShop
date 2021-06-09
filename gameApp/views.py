@@ -5,30 +5,12 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
 
-from gameApp.forms import filterForm
 from gameApp.models import*
 
 
 class GameView(View):
     def GetGamesPage(request) -> render:
         games = Game.objects.all()
-        gameform = filterForm(request.GET)
-        if 'filter' in request.GET:
-            if gameform.is_valid():
-                if gameform.cleaned_data["price"]:
-                    games = games.filter(price__lte=gameform.cleaned_data["price"])
-                if gameform.cleaned_data["publisher"]:
-                    games = games.filter(publisher__name__icontains=gameform.cleaned_data["publisher"])
-                if gameform.cleaned_data["developer"]:
-                    games = games.filter(developer__name__icontains=gameform.cleaned_data["developer"])
-                if gameform.cleaned_data["rating"]:
-                    games = games.filter(rating__gte=gameform.cleaned_data["rating"])
-                if gameform.cleaned_data["release"]:
-                    filter_date=gameform.cleaned_data["release"]
-                    games = games.filter(release__gte='{0}-01-01'.format(filter_date)).order_by('release')
-            return render(request, 'templates/gamesPage.html',
-                          {'game_list': games, 'filter_form': gameform})
-
         paginator = Paginator(games, 10)
         page = request.GET.get('page')
         try:
@@ -38,11 +20,10 @@ class GameView(View):
         except EmptyPage:
             posts = paginator.page(paginator.num_pages)
         return render(request, 'templates/gamesPage.html',
-                      {'game_list': posts, 'filter_form': gameform})
+                      {'game_list': posts})
 
     def showDetailView(request, slug) -> render:
         game = Game.objects.get(url=slug)
-        gameform = filterForm(request.GET)
         gameShots = GameShots.objects.filter(game=game)
         tags = Tagged.objects.filter(game=game)
         if request.user.is_authenticated:
@@ -63,40 +44,23 @@ class GameView(View):
                 if 'add' in request.POST:
                     return redirect("/login")
         return render(request, 'templates/gameInfoPage.html',
-                            {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': cart, 'lib': lib, 'filter_form': gameform})
+                            {'game': game, 'gameShots': gameShots, 'tags': tags, 'cart': cart, 'lib': lib})
 
     def sort(request):
         games = Game.objects.all()
-        gameform = filterForm(request.GET)
-        if 'price_up' in request.GET:
-            games = games.order_by("price")
-        if 'price_down' in request.GET:
-            games = games.order_by("-price")
-        if 'developer_up' in request.GET:
-            games = games.order_by("developer__name")
-        if 'developer_down' in request.GET:
-            games = games.order_by("-developer__name")
-        if 'publisher_up' in request.GET:
-            games = games.order_by("publisher__name")
-        if 'publisher_down' in request.GET:
-            games = games.order_by("-publisher__name")
-        if 'release_up' in request.GET:
-            games = games.order_by("release")
-        if 'release_down' in request.GET:
-            games = games.order_by("-release")
+
         return render(request, 'templates/gamesPage.html',
-                      {'game_list': games, 'filter_form': gameform})
+                      {'game_list': games})
 
 
 class SearchView(View):
     def get(self, request, *args, **kwargs):
         games = {}
         question = request.GET.get('name')
-
         if question is not None:
             search_game = Game.objects.filter(Q(name__icontains=question))
             games['last_question'] = '?name=%s' % question
-            paginator = Paginator(search_game, 2)
+            paginator = Paginator(search_game, 10)
             page = request.GET.get('page')
             try:
                 games['game_list'] = paginator.page(page)
@@ -105,6 +69,56 @@ class SearchView(View):
             except EmptyPage:
                 games['game_list'] = paginator.page(paginator.num_pages)
         return render(request, template_name='templates/gamesPage.html', context=games)
+
+
+class FilterView(View):
+    def get(self, request, *args, **kwargs):
+        games = {}
+        range = request.GET.get('range')
+        if range is not None:
+            range = str(range).split(';')
+            minPrice = int(range[0])
+            maxPrice = int(range[1])
+            filter_game = Game.objects.filter(Q(price__range=(minPrice, maxPrice)))
+            games['last_question'] = '?range=%s' % range
+            paginator = Paginator(filter_game, 10)
+            page = request.GET.get('page')
+            try:
+                games['game_list'] = paginator.page(page)
+            except PageNotAnInteger:
+                games['game_list'] = paginator.page(1)
+            except EmptyPage:
+                games['game_list'] = paginator.page(paginator.num_pages)
+        return render(request, template_name='templates/gamesPage.html', context=games)
+
+
+class SortView(View):
+    def get(self, request, *args, **kwargs):
+        games = {}
+        sort_value = request.GET.get('radio_button')
+        if sort_value is not None:
+            if sort_value == '1':
+                sort_game = Game.objects.order_by("name")
+            elif sort_value == '2':
+                sort_game = Game.objects.order_by("-name")
+            elif sort_value == '3':
+                sort_game = Game.objects.order_by("price")
+            elif sort_value == '4':
+                sort_game = Game.objects.order_by("-price")
+            elif sort_value == '5':
+                sort_game = Game.objects.order_by("release")
+            elif sort_value == '6':
+                sort_game = Game.objects.order_by("-release")
+            games['last_sort_value'] = '?sort_value=%s' % sort_value
+            paginator = Paginator(sort_game, 10)
+            page = request.GET.get('page')
+            try:
+                games['game_list'] = paginator.page(page)
+            except PageNotAnInteger:
+                games['game_list'] = paginator.page(1)
+            except EmptyPage:
+                games['game_list'] = paginator.page(paginator.num_pages)
+            return render(request, template_name='templates/gamesPage.html', context=games)
 
 
 class Library(View):

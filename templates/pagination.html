@@ -15,21 +15,24 @@ ul.pagination li a {
 
 }
 .active{
-background-color: #12283e;
+background-color: #000000;
 }
 
 
 </style>
 {% load i18n %}
 <ul class="pagination">
-    {% if page.number|add:-3 > 1 %}
-            <li class="pagination__item">
-                <a href="/?page=1">1</a>
-            </li>
-        {% endif %}
     {% if page.has_previous %}
     <li>
-        <a class="previous" href="?page={{ page.previous_page_number }}{% if request.GET.name %}&name={{request.GET.name }}{% endif %}">{% trans 'Предыдущая' %}
+        <a class="previous" href="?page={{ page.previous_page_number }}
+        {% if request.GET.name %}&name={{request.GET.name }}{% endif %}
+        {% if request.GET.range %}&range={{ request.GET.range }}{% endif %}
+        {% if request.GET.radio_button %}&radio_button={{ request.GET.radio_button }}{% endif %}">{% trans '🢀' %}
+        </a>
+    </li>
+    {% else %}
+    <li>
+        <a class="previous">{% trans '🢀' %}
         </a>
     </li>
     {% endif %}
@@ -37,18 +40,34 @@ background-color: #12283e;
             {% if n > page.number|add:-3 and n < page.number|add:3 %}
                 {% if n == page.number %}
                     <li>
-                        <a class="active" href='?page={{ n }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}'>{{ n }}</a>
+                        <a class="active"
+                           href='?page={{ n }}
+                           {% if request.GET.name %}&name={{ request.GET.name }}
+                           {% endif %}{% if request.GET.range %}&range={{ request.GET.range }}{% endif %}
+                           {% if request.GET.radio_button %}&radio_button={{ request.GET.radio_button }}{% endif %}'>{{ n }}</a>
                     </li>
                 {% else %}
                     <li>
-                        <a href='?page={{ n }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}'>{{ n }}</a>
+                        <a href='?page={{ n }}
+                        {% if request.GET.name %}&name={{ request.GET.name }}{% endif %}
+                        {% if request.GET.range %}&range={{ request.GET.range }}{% endif %}
+                        {% if request.GET.radio_button %}&radio_button={{ request.GET.radio_button }}{% endif %}'>{{ n }}</a>
                     </li>
                 {% endif %}
             {% endif %}
         {% endfor %}
     {% if page.has_next %}
     <li>
-        <a class="Next" href="?page={{ page.next_page_number }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}">
-            {% trans 'Следующая' %}</a>
+        <a class="Next" href="?page={{ page.next_page_number }}
+        {% if request.GET.name %}&name={{ request.GET.name }}{% endif %}
+        {% if request.GET.range %}&range={{ request.GET.range }}{% endif %}
+        {% if request.GET.radio_button %}&radio_button={{ request.GET.radio_button }}{% endif %}">
+            {% trans '🢂' %}</a>
+    </li>
+    {% else %}
+    <li>
+        <a class="Next">
+            {% trans '🢂' %}</a>
     </li>
     {% endif %}
+</ul>

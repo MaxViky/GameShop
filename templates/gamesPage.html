@@ -6,14 +6,18 @@
 
 
 </style>
+{{ sort_value }}
     {% if game_list %}
     <div class="row" style="padding-top: 15px; margin-left: 0px;">
         {% for game in game_list %}
-        <div class="short-item " >
-            <div class="article-game " >
+        <div class="short-item">
+            <div class="article-game" >
                 <div class="article-game-image">
                     <a href="/games/{{ game.url }}">
-                        <img class="article-img" src="{{ game.poster.url }}" alt=""/>
+                        <div class="">
+                        <span class="year-block">{{ game.release.year }}</span>
+                        </div>
+                        <img class="article-img" src="{{ game.poster.url }}" alt="">
                     </a>
                 </div>
                 <center >

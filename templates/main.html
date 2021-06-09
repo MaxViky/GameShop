@@ -6,13 +6,16 @@
 
   </style>
 <div class="white container" style="margin-top: 10px;">
-  <h1>Популярные игры</h1>
+  <h1 class="menuitems_color">Популярные игры</h1>
 <div class="row">
 {% for game in games_popular %}
         <div class="short-item">
             <div class="article-game">
                 <div class="article-game-image">
                     <a href="/games/{{ game.url }}">
+                        <div class="menu_color">
+                        <span class="year-block menuitems_color">{{ game.release.year }}</span>
+                        </div>
                         <img class="article-img" src="{{ game.poster.url }}" alt="">
                     </a>
                 </div>
@@ -34,15 +37,18 @@
         </div>
         {% endfor %}
   </div>
-    <h2 align="center">
-    <font color="white">Новинки {{ year }}</font>
-  </h2>
+    <h1 class="menuitems_color">
+    Новинки {{ year }}
+  </h1>
 <div class="row">
 {% for game in games_new_release %}
         <div class="short-item">
             <div class="article-game">
                 <div class="article-game-image">
                     <a href="/games/{{ game.url }}">
+                        <div class="menu_color">
+                        <span class="year-block menuitems_color">{{ game.release.year }}</span>
+                        </div>
                         <img class="article-img" src="{{ game.poster.url }}" alt="">
                     </a>
                 </div>

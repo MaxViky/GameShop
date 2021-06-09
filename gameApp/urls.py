@@ -7,9 +7,10 @@ from . import views
 from .views import GameView
 
 urlpatterns = [
-    url('^$', GameView.GetGamesPage, name='shop_frame'),
+    url('^$', views.GameView.GetGamesPage, name='shop_frame'),
     url('^search/', views.SearchView.as_view(), name='search'),
-    url('^sort/', GameView.sort, name='sort'),
+    url('^filter/', views.FilterView.as_view(), name='filter'),
+    url('^sort/', views.SortView.as_view(), name='sort'),
     path('<slug:slug>/', GameView.showDetailView),
 
 ]
