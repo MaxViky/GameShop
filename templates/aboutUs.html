@@ -1,0 +1,31 @@
+{% extends 'templates/default.html' %}
+{% block title %} О нас {% endblock %}
+{% block content %}
+<style>
+    .info
+    {text-align: center; padding-bottom: 20px; padding-top: 20px;}
+
+</style>
+{% load static %}
+<div class="info">
+    <div>
+    <H4 class="menuitems_color">YummyGames</H4>
+    YummyGames - отличный сайт для геймеров и разработчиков
+        <br>
+        <br>
+    <img style="width: 540px; height: 350px;" src="{% static 'aboutUs/1.jpg' %}">
+    </div>
+    <H4 class="menuitems_color">Большой выбор приложений</H4>
+    Наш сайт предлагает около 50 различных приложений. И это ещё не всё!
+        <br>
+        <br>
+    <img style="width: 540px; height: 350px;" src="{% static 'aboutUs/2.jpg' %}">
+    <br>
+    <br>
+    <H4 class="menuitems_color">Регистрируйтесь уже сейчас!</H4>
+    Присоединяйтесь к сообществу геймеров, получитет доступ к личному кабинету и своим покупкам!
+    <br>
+    <br>
+    <a type="submit" href="/join" class="btn">Присоединиться</a>
+</div>
+{% endblock %}

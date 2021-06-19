@@ -10,4 +10,5 @@ def create_profile(sender, **kwargs):
         up = Profile(user=user, stuff=1, thing=2)
         up.save()
 
+
 post_save.connect(create_profile, sender=User)

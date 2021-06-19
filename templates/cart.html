@@ -9,6 +9,8 @@
 </style>
 <br>{% if games %}
 {% for cart in games %}
+<form action="" method="POST">
+    {% csrf_token %}
 <div class="media">
     <div class="media-left">
         <a href="#">
@@ -16,18 +18,19 @@
         </a>
     </div>
     <div style="padding-left: 10px;" class="media-body">
-        <h4 class="media-heading"><a class="menuitems_color" href="#">{{ cart.game.name }}</a></h4>
+        <h4 class="media-heading"><a class="menuitems_color" href="/games/{{ cart.game.url }}">{{ cart.game.name }}</a></h4>
         <span class="mu-menu-price">{{ cart.game.price }} руб.</span>
         <p>{{ cart.game.description }}</p>
     </div>
+        <input type="checkbox" value="{{ cart.game.pk }}" id="{{ cart.game.pk }}" name="games"/>
 </div>
 <br>
 {% endfor %}
 <h4>Итого: {{ sum_cart.price }} руб.</h4>
 <br>
-<form action="" method="POST">
      {% csrf_token %}
-<input class="btn mediumBlue btn-md white" style="margin-top:10px; margin-bottom: 10px;" type="submit" name="buy" id="buy" value="Купить">
+<input class="btn btn-md white" style="margin-top:10px; margin-bottom: 10px;" type="submit" name="buy" id="buy" value="Купить">
+    <input class="btn btn-md white" style="margin-top:10px; margin-bottom: 10px;" type="submit" name="delete" id="delete" value="Удалить выбранное">
 </form>
     <br>
 {% else %}

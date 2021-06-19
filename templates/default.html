@@ -107,14 +107,17 @@
             <div class="container">
                 <!-- ==========  Main navigation ========== -->
                 <div class="navigation navigation-main" style="border-bottom: 0px;">
-                    <a href="#" class="open-login menu_color" ><i class="icon icon-user"></i></a>
-                    <a href="#" class="open-search"><i class="icon icon-magnifier"></i></a>
-                    <a href="#" class="open-cart"><i class="icon icon-cart"></i> <span>4</span></a>
+                    {% if request.user.is_authenticated %}
+                    <a href="/profile/{{ user }}" class="open-login menuitems_color"><i class="icon icon-user"></i></a>
+                    {% else %}
+                    <a href="/login/" class="open-login menuitems_color" ><i class="icon icon-user"></i></a>
+                    {% endif %}
+                    <a class="menuitems_color open-cart" href="{% if request.user.is_authenticated %}
+                        {% url 'user_cart' user=user %}{% else %}/login{% endif %}"><i class="icon icon-cart"></i></a>
                     <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
-
-                    <div class="floating-menu ">
+                    <div style="background-color: #000;" class="floating-menu">
                         <!--mobile toggle menu trigger-->
-                        <div class="close-menu-wrapper">
+                        <div class="close-menu-wrapper menu_color">
                             <span class="close-menu"><i class="icon icon-cross"></i></span>
                         </div>
                         <ul class="menu_color menuitems_color">
@@ -126,12 +129,20 @@
                                 <a class="menuitems_color" href="/games/?page=1">Магазин</a>
                             </li>
                             <li>
-                                <a class="menuitems_color" href="#">О НАС</a>
+                                <a class="menuitems_color" href="{% url 'about_us' %}">О НАС</a>
                             </li>
                             <li>
                                 <a class="menuitems_color" href="#footer">Связь</a>
                             </li>
-                            <li style="margin-left: 380px;">
+                            {% if request.user.is_superuser %}
+                            <li>
+                                <a class="menuitems_color" href="/admin">Администрирование</a>
+                            </li>
+
+                            <li style="margin-left: 250px;">
+                                {% else %}
+                                <li style="margin-left: 450px;">
+                                {% endif %}
                                 {% if request.user.is_authenticated %}
                                 <a class="menuitems_color" href="/profile/{{ user }}"><i class="icon icon-user"></i></a>
                                 {% else %}
@@ -148,6 +159,7 @@
                                     <i class="icon icon-exit"></i></a>
                             </li>
                             {% endif %}
+
                         </ul>
                     </div>
                 </div>

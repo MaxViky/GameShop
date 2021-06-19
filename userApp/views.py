@@ -88,14 +88,14 @@ class ProfileView(View):
                 game.count_download += 1
                 game.save()
             games_in_cart.delete()
-            return redirect("/")
+        if 'delete' in request.POST:
+            game = request.POST.getlist('games')
+            for pk in game:
+                var = games_in_cart.filter(game__pk=pk)
+                var.delete()
         return render(request, 'templates/cart.html', {'games': games_in_cart, 'sum_cart': sum_games_in_cart})
 
     def getHistoryPay(request, user):
         hp = HistoryPay.objects.filter(user=request.user)
         return render(request, 'templates/HistoryPay.html', {'HistoryPay': hp})
 
-class Friends(View):
-    def get(request, user):
-        frds = friends.objects.filter(user=request.user)
-        return render(request, 'templates/friends.html', {'friends': frds})

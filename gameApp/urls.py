@@ -12,5 +12,4 @@ urlpatterns = [
     url('^filter/', views.FilterView.as_view(), name='filter'),
     url('^sort/', views.SortView.as_view(), name='sort'),
     path('<slug:slug>/', GameView.showDetailView),
-
 ]

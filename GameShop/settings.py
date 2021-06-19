@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
     'gameApp',
     'userApp',
     'main',
@@ -44,7 +45,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'degurseff@gmail.com'
+# EMAIL_HOST_PASSWORD = 'Maks_173rus'
+# # если используется защищенное соединение
+# EMAIL_PORT = 465
+# EMAIL_USE_TLS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

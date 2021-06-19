@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     url('^$', views.PopularGames.as_view()),
+    url('aboutUs', views.AboutUs.as_view(), name='about_us')
 ]

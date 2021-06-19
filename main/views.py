@@ -1,5 +1,7 @@
 import datetime
 
+from django.conf.global_settings import DEFAULT_FROM_EMAIL
+from django.core import mail
 from django.shortcuts import render
 
 # Create your views here.
@@ -19,5 +21,6 @@ class PopularGames(View):
                        'games_new_release': games_new_release, 'year': year})
 
 
-def MainPage(request):
-    return render(request, 'templates/main.html')
+class AboutUs(View):
+    def get(self, request):
+        return render(request, 'templates/aboutUs.html')
